@@ -26,8 +26,8 @@ export function chainIdToNetworkName(networkId: ChainId): string {
   }
 }
 
-export function generateProviderUrl(key: string): string {
-  // const tokens = value.split(',')
+export function generateProviderUrl(key: string, value: string): string {
+  value.split(',')
   switch (key) {
     // Infura
     // case 'INFURA_43114': {

@@ -11909,7 +11909,7 @@ typical@^2.6.0, typical@^2.6.1:
   resolved "https://registry.yarnpkg.com/typical/-/typical-2.6.1.tgz#5c080e5d661cbbe38259d2e70a3c7253e873881d"
   integrity sha512-ofhi8kjIje6npGozTip9Fr8iecmYfEbS06i0JnIg+rh51KakryWF4+jX8lLKZVhy6N+ID45WYSFCxPOdTWCzNg==
 
-u-smart-order-router-v3@1.0.2:
+u-smart-order-router-v3@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/u-smart-order-router-v3/-/u-smart-order-router-v3-1.0.2.tgz#3a22e3f4cdfd0010b5f53ee9ddcf66e8f8daa790"
   integrity sha512-+XFTiNmhNkA4mebpyieXFpaoP9d9b3QDkMYATE7mdK50jWOFnJF9uWhlyauCD5NUui2zUBZ4kRwwOfAGsrk3+Q==
