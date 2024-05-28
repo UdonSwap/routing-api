@@ -296,9 +296,9 @@ describe('quote', function () {
     ])
 
     // alice should always have 10000 ETH
-    const aliceEthBalance = await getBalance(alice, ETHER.onChain(1))
+    const aliceEthBalance = await getBalance(alice, ETHER.onChain(919))
     /// Since alice is deploying the QuoterV3 contract, expect to have slightly less than 10_000 ETH but not too little
-    expect(!aliceEthBalance.lessThan(CurrencyAmount.fromRawAmount(ETHER.onChain(1), '9995'))).to.be.true
+    expect(!aliceEthBalance.lessThan(CurrencyAmount.fromRawAmount(ETHER.onChain(919), '9995'))).to.be.true
 
     // for all other balance checks, we ensure they are at least X amount. There's a possibility for more than X token amount,
     // due to a single whale address being whale for more than one token.
@@ -528,12 +528,12 @@ describe('quote', function () {
             const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
               methodParameters!,
               USDC_MODE,
-              ETHER.onChain(1)
+              ETHER.onChain(919)
             )
 
             if (type == 'exactIn') {
               expect(tokenInBefore.subtract(tokenInAfter).toExact()).to.equal('1000000')
-              checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(ETHER.onChain(1), quote))
+              checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(ETHER.onChain(919), quote))
             } else {
               // Hard to test ETH balance due to gas costs for approval and swap. Just check tokenIn changes
               checkQuoteToken(tokenInBefore, tokenInAfter, CurrencyAmount.fromRawAmount(USDC_MODE, quote))
@@ -588,12 +588,12 @@ describe('quote', function () {
             const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
               data.methodParameters!,
               USDC_MODE,
-              ETHER.onChain(1)
+              ETHER.onChain(919)
             )
 
             if (type == 'exactIn') {
               expect(tokenInBefore.subtract(tokenInAfter).toExact()).to.equal('1000000')
-              checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(ETHER.onChain(1), data.quote))
+              checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(ETHER.onChain(919), data.quote))
             } else {
               // Hard to test ETH balance due to gas costs for approval and swap. Just check tokenIn changes
               checkQuoteToken(tokenInBefore, tokenInAfter, CurrencyAmount.fromRawAmount(USDC_MODE, data.quote))
@@ -655,13 +655,13 @@ describe('quote', function () {
             const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
               data.methodParameters!,
               USDC_MODE,
-              ETHER.onChain(1),
+              ETHER.onChain(919),
               true
             )
 
             if (type == 'exactIn') {
               expect(tokenInBefore.subtract(tokenInAfter).toExact()).to.equal('1000000')
-              checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(ETHER.onChain(1), data.quote))
+              checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(ETHER.onChain(919), data.quote))
             } else {
               // Hard to test ETH balance due to gas costs for approval and swap. Just check tokenIn changes
               checkQuoteToken(tokenInBefore, tokenInAfter, CurrencyAmount.fromRawAmount(USDC_MODE, data.quote))
@@ -696,13 +696,13 @@ describe('quote', function () {
 
             const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
               data.methodParameters!,
-              ETHER.onChain(1),
+              ETHER.onChain(919),
               Abah072
             )
 
             if (type == 'exactIn') {
               // We've swapped 10 ETH + gas costs
-              expect(tokenInBefore.subtract(tokenInAfter).greaterThan(parseAmount('10', ETHER.onChain(1)))).to.be.true
+              expect(tokenInBefore.subtract(tokenInAfter).greaterThan(parseAmount('10', ETHER.onChain(919)))).to.be.true
               checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(Abah072, data.quote))
             } else {
               expect(tokenOutAfter.subtract(tokenOutBefore).toExact()).to.equal('10000')
@@ -739,13 +739,13 @@ describe('quote', function () {
 
             const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
               data.methodParameters!,
-              ETHER.onChain(1),
+              ETHER.onChain(919),
               Abah072
             )
 
             if (type == 'exactIn') {
               // We've swapped 10 ETH + gas costs
-              expect(tokenInBefore.subtract(tokenInAfter).greaterThan(parseAmount('10', ETHER.onChain(1)))).to.be.true
+              expect(tokenInBefore.subtract(tokenInAfter).greaterThan(parseAmount('10', ETHER.onChain(919)))).to.be.true
               checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(Abah072, data.quote))
             } else {
               expect(tokenOutAfter.subtract(tokenOutBefore).toExact()).to.equal('10000')
@@ -1503,12 +1503,12 @@ describe('quote', function () {
               const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
                 methodParameters!,
                 USDC_MODE,
-                ETHER.onChain(1)
+                ETHER.onChain(919)
               )
 
               if (type == 'exactIn') {
                 expect(tokenInBefore.subtract(tokenInAfter).toExact()).to.equal('1000000')
-                checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(ETHER.onChain(1), quote))
+                checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(ETHER.onChain(919), quote))
               } else {
                 // Hard to test ETH balance due to gas costs for approval and swap. Just check tokenIn changes
                 checkQuoteToken(tokenInBefore, tokenInAfter, CurrencyAmount.fromRawAmount(USDC_MODE, quote))
@@ -1565,7 +1565,7 @@ describe('quote', function () {
               const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
                 data.methodParameters!,
                 USDC_MODE,
-                ETHER.onChain(1)
+                ETHER.onChain(919)
               )
 
               if (type == 'exactIn') {
@@ -1573,7 +1573,7 @@ describe('quote', function () {
                 checkQuoteToken(
                   tokenOutBefore,
                   tokenOutAfter,
-                  CurrencyAmount.fromRawAmount(ETHER.onChain(1), data.quote)
+                  CurrencyAmount.fromRawAmount(ETHER.onChain(919), data.quote)
                 )
               } else {
                 // Hard to test ETH balance due to gas costs for approval and swap. Just check tokenIn changes
@@ -1610,13 +1610,13 @@ describe('quote', function () {
 
               const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
                 data.methodParameters!,
-                ETHER.onChain(1),
+                ETHER.onChain(919),
                 Abah072
               )
 
               if (type == 'exactIn') {
                 // We've swapped 10 ETH + gas costs
-                expect(tokenInBefore.subtract(tokenInAfter).greaterThan(parseAmount('10', ETHER.onChain(1)))).to.be.true
+                expect(tokenInBefore.subtract(tokenInAfter).greaterThan(parseAmount('10', ETHER.onChain(919)))).to.be.true
                 checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(Abah072, data.quote))
               } else {
                 expect(tokenOutAfter.subtract(tokenOutBefore).toExact()).to.equal('10000')
@@ -1652,13 +1652,13 @@ describe('quote', function () {
 
               const { tokenInBefore, tokenInAfter, tokenOutBefore, tokenOutAfter } = await executeSwap(
                 data.methodParameters!,
-                ETHER.onChain(1),
+                ETHER.onChain(919),
                 Abah072
               )
 
               if (type == 'exactIn') {
                 // We've swapped 10 ETH + gas costs
-                expect(tokenInBefore.subtract(tokenInAfter).greaterThan(parseAmount('10', ETHER.onChain(1)))).to.be.true
+                expect(tokenInBefore.subtract(tokenInAfter).greaterThan(parseAmount('10', ETHER.onChain(919)))).to.be.true
                 checkQuoteToken(tokenOutBefore, tokenOutAfter, CurrencyAmount.fromRawAmount(Abah072, data.quote))
                 expect(data.simulationError).to.equal(false)
               } else {

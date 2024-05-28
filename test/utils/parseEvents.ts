@@ -46,7 +46,7 @@ export function parseEvents(txReceipt: providers.TransactionReceipt, addressFilt
         }
 
         // transfer/approval needs own interface because params are named differently (wad/guy *eye-roll*)
-      } else if (log.address === WETH9[1].address) {
+      } else if (log.address === WETH9[919].address) {
         return {
           origin: log.address,
           ...WETH_INTERFACE.parseLog(log),
