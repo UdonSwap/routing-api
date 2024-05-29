@@ -11,7 +11,7 @@ import { RpcProvidersWidgetsFactory } from '../../lib/dashboards/rpc-providers-w
 import { REQUEST_SOURCES } from '../../lib/util/requestSources'
 import { TESTNETS } from '../../lib/util/testNets'
 
-export const NAMESPACE = 'Uniswap'
+export const NAMESPACE = 'Udonswap'
 
 export type LambdaWidget = {
   type: string
@@ -608,7 +608,7 @@ export class RoutingDashboardStack extends cdk.NestedStack {
               type: 'metric',
               properties: {
                 metrics: REQUEST_SOURCES.map((source) => [
-                  'Uniswap',
+                  'Udonswap',
                   `GET_QUOTE_REQUEST_SOURCE: ${source}`,
                   'Service',
                   'RoutingAPI',
@@ -799,8 +799,8 @@ export class RoutingDashboardStack extends cdk.NestedStack {
               height: 6,
               properties: {
                 metrics: _.flatMap(SUPPORTED_CHAINS, (chainId: ChainId) => [
-                  ['Uniswap', `QuoteFoundForChain${chainId}`, 'Service', 'RoutingAPI'],
-                  ['Uniswap', `QuoteRequestedForChain${chainId}`, 'Service', 'RoutingAPI'],
+                  ['Udonswap', `QuoteFoundForChain${chainId}`, 'Service', 'RoutingAPI'],
+                  ['Udonswap', `QuoteRequestedForChain${chainId}`, 'Service', 'RoutingAPI'],
                 ]),
                 view: 'timeSeries',
                 stacked: false,

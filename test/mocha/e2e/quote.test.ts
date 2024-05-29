@@ -60,11 +60,11 @@ chai.use(chaiSubset)
 
 const UNIVERSAL_ROUTER_ADDRESS = UNIVERSAL_ROUTER_ADDRESS_BY_CHAIN(919)
 
-if (!process.env.UNISWAP_ROUTING_API || !process.env.ARCHIVE_NODE_RPC) {
-  throw new Error('Must set UNISWAP_ROUTING_API and ARCHIVE_NODE_RPC env variables for integ tests. See README')
+if (!process.env.UDONSWAP_ROUTING_API || !process.env.ARCHIVE_NODE_RPC) {
+  throw new Error('Must set UDONSWAP_ROUTING_API and ARCHIVE_NODE_RPC env variables for integ tests. See README')
 }
 
-const API = `${process.env.UNISWAP_ROUTING_API!}quote`
+const API = `${process.env.UDONSWAP_ROUTING_API!}quote`
 
 const SLIPPAGE = '5'
 const LARGE_SLIPPAGE = '20'

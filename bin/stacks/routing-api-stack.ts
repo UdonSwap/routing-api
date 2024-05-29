@@ -327,14 +327,14 @@ export class RoutingAPIStack extends cdk.Stack {
         period: Duration.minutes(30),
         usingMetrics: {
           simulationRequested: new aws_cloudwatch.Metric({
-            namespace: 'Uniswap',
+            namespace: 'Udonswap',
             metricName: `Simulation Requested`,
             dimensionsMap: { Service: 'RoutingAPI' },
             unit: aws_cloudwatch.Unit.COUNT,
             statistic: 'sum',
           }),
           simulationFailed: new aws_cloudwatch.Metric({
-            namespace: 'Uniswap',
+            namespace: 'Udonswap',
             metricName: `SimulationFailed`,
             dimensionsMap: { Service: 'RoutingAPI' },
             unit: aws_cloudwatch.Unit.COUNT,
@@ -358,14 +358,14 @@ export class RoutingAPIStack extends cdk.Stack {
         expression: '100*(response400/invocations)',
         usingMetrics: {
           invocations: new aws_cloudwatch.Metric({
-            namespace: 'Uniswap',
+            namespace: 'Udonswap',
             metricName: `GET_QUOTE_REQUESTED_CHAINID: ${chainId.toString()}`,
             dimensionsMap: { Service: 'RoutingAPI' },
             unit: aws_cloudwatch.Unit.COUNT,
             statistic: 'sum',
           }),
           response400: new aws_cloudwatch.Metric({
-            namespace: 'Uniswap',
+            namespace: 'Udonswap',
             metricName: `GET_QUOTE_400_CHAINID: ${chainId.toString()}`,
             dimensionsMap: { Service: 'RoutingAPI' },
             unit: aws_cloudwatch.Unit.COUNT,
@@ -393,21 +393,21 @@ export class RoutingAPIStack extends cdk.Stack {
         expression: '100*(response200/(invocations-response400))',
         usingMetrics: {
           invocations: new aws_cloudwatch.Metric({
-            namespace: 'Uniswap',
+            namespace: 'Udonswap',
             metricName: `GET_QUOTE_REQUESTED_CHAINID: ${chainId.toString()}`,
             dimensionsMap: { Service: 'RoutingAPI' },
             unit: aws_cloudwatch.Unit.COUNT,
             statistic: 'sum',
           }),
           response400: new aws_cloudwatch.Metric({
-            namespace: 'Uniswap',
+            namespace: 'Udonswap',
             metricName: `GET_QUOTE_400_CHAINID: ${chainId.toString()}`,
             dimensionsMap: { Service: 'RoutingAPI' },
             unit: aws_cloudwatch.Unit.COUNT,
             statistic: 'sum',
           }),
           response200: new aws_cloudwatch.Metric({
-            namespace: 'Uniswap',
+            namespace: 'Udonswap',
             metricName: `GET_QUOTE_200_CHAINID: ${chainId.toString()}`,
             dimensionsMap: { Service: 'RoutingAPI' },
             unit: aws_cloudwatch.Unit.COUNT,
@@ -436,21 +436,21 @@ export class RoutingAPIStack extends cdk.Stack {
         expression: '100*(response200/(invocations-response400))',
         usingMetrics: {
           invocations: new aws_cloudwatch.Metric({
-            namespace: 'Uniswap',
+            namespace: 'Udonswap',
             metricName: `GET_QUOTE_REQUEST_SOURCE: ${requestSource.toString()}`,
             dimensionsMap: { Service: 'RoutingAPI' },
             unit: aws_cloudwatch.Unit.COUNT,
             statistic: 'sum',
           }),
           response400: new aws_cloudwatch.Metric({
-            namespace: 'Uniswap',
+            namespace: 'Udonswap',
             metricName: `GET_QUOTE_400_REQUEST_SOURCE: ${requestSource.toString()}`,
             dimensionsMap: { Service: 'RoutingAPI' },
             unit: aws_cloudwatch.Unit.COUNT,
             statistic: 'sum',
           }),
           response200: new aws_cloudwatch.Metric({
-            namespace: 'Uniswap',
+            namespace: 'Udonswap',
             metricName: `GET_QUOTE_200_REQUEST_SOURCE: ${requestSource.toString()}`,
             dimensionsMap: { Service: 'RoutingAPI' },
             unit: aws_cloudwatch.Unit.COUNT,
@@ -484,21 +484,21 @@ export class RoutingAPIStack extends cdk.Stack {
           expression: '100*(response200/(invocations-response400))',
           usingMetrics: {
             invocations: new aws_cloudwatch.Metric({
-              namespace: 'Uniswap',
+              namespace: 'Udonswap',
               metricName: `GET_QUOTE_REQUEST_SOURCE_AND_CHAINID: ${requestSource.toString()} ${chainId}`,
               dimensionsMap: { Service: 'RoutingAPI' },
               unit: aws_cloudwatch.Unit.COUNT,
               statistic: 'sum',
             }),
             response400: new aws_cloudwatch.Metric({
-              namespace: 'Uniswap',
+              namespace: 'Udonswap',
               metricName: `GET_QUOTE_400_REQUEST_SOURCE_AND_CHAINID: ${requestSource.toString()} ${chainId}`,
               dimensionsMap: { Service: 'RoutingAPI' },
               unit: aws_cloudwatch.Unit.COUNT,
               statistic: 'sum',
             }),
             response200: new aws_cloudwatch.Metric({
-              namespace: 'Uniswap',
+              namespace: 'Udonswap',
               metricName: `GET_QUOTE_200_REQUEST_SOURCE_AND_CHAINID: ${requestSource.toString()} ${chainId}`,
               dimensionsMap: { Service: 'RoutingAPI' },
               unit: aws_cloudwatch.Unit.COUNT,

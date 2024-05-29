@@ -68,7 +68,7 @@ export class QuoteHandlerInjector extends InjectorSOR<
     })
     setGlobalLogger(log)
 
-    metricsLogger.setNamespace('Uniswap')
+    metricsLogger.setNamespace('Udonswap')
     metricsLogger.setDimensions({ Service: 'RoutingAPI' })
     const metric = new AWSMetricsLogger(metricsLogger)
     setGlobalMetric(metric)

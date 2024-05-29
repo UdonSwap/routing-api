@@ -83,7 +83,7 @@ export class RoutingAPIPipeline extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props)
 
-    const code = CodePipelineSource.gitHub('Uniswap/routing-api', 'main', {
+    const code = CodePipelineSource.gitHub('Udonswap/routing-api', 'master', {
       authentication: SecretValue.secretsManager('github-token-2'),
     })
 
@@ -117,7 +117,7 @@ export class RoutingAPIPipeline extends Stack {
     const jsonRpcProvidersSecret = sm.Secret.fromSecretAttributes(this, 'RPCProviderUrls', {
       // The main secrets use our Infura RPC urls
       secretCompleteArn:
-        'arn:aws:secretsmanager:us-east-2:644039819003:secret:routing-api-rpc-urls-json-primary-ixS8mw',
+        'arn:aws:secretsmanager:us-east-1:058264242741:secret:routing-api-rpc-urls-json-primary-ixS8mw',
 
       /*
       The backup secrets mostly use our Alchemy RPC urls
@@ -127,43 +127,43 @@ export class RoutingAPIPipeline extends Stack {
       we must set the multicall chunk size to 50 so that optimism
       does not bug out on Alchemy's end
       */
-      //secretCompleteArn: arn:aws:secretsmanager:us-east-2:644039819003:secret:routing-api-rpc-urls-json-backup-D2sWoe
+      //secretCompleteArn: arn:aws:secretsmanager:us-east-1:058264242741:secret:routing-api-rpc-urls-json-backup-D2sWoe
     })
 
     // Secret that controls the access to the debugging query string params
     const unicornSecrets = sm.Secret.fromSecretAttributes(this, 'DebugConfigUnicornSecrets', {
-      secretCompleteArn: 'arn:aws:secretsmanager:us-east-2:644039819003:secret:debug-config-unicornsecrets-jvmCsq',
+      secretCompleteArn: 'arn:aws:secretsmanager:us-east-1:058264242741:secret:debug-config-unicornsecrets-jvmCsq',
     })
 
     const tenderlyCreds = sm.Secret.fromSecretAttributes(this, 'TenderlyCreds', {
-      secretCompleteArn: 'arn:aws:secretsmanager:us-east-2:644039819003:secret:tenderly-api-wQaI2R',
+      secretCompleteArn: 'arn:aws:secretsmanager:us-east-1:058264242741:secret:tenderly-api-wQaI2R',
     })
 
     const ethGasStationInfoUrl = sm.Secret.fromSecretAttributes(this, 'ETHGasStationUrl', {
-      secretCompleteArn: 'arn:aws:secretsmanager:us-east-2:644039819003:secret:eth-gas-station-info-url-ulGncX',
+      secretCompleteArn: 'arn:aws:secretsmanager:us-east-1:058264242741:secret:eth-gas-station-info-url-ulGncX',
     })
 
     const pinataApi = sm.Secret.fromSecretAttributes(this, 'PinataAPI', {
-      secretCompleteArn: 'arn:aws:secretsmanager:us-east-2:644039819003:secret:pinata-api-key-UVLAfM',
+      secretCompleteArn: 'arn:aws:secretsmanager:us-east-1:058264242741:secret:pinata-api-key-UVLAfM',
     })
     const route53Arn = sm.Secret.fromSecretAttributes(this, 'Route53Arn', {
-      secretCompleteArn: 'arn:aws:secretsmanager:us-east-2:644039819003:secret:Route53Arn-elRmmw',
+      secretCompleteArn: 'arn:aws:secretsmanager:us-east-1:058264242741:secret:Route53Arn-elRmmw',
     })
 
     const pinataSecret = sm.Secret.fromSecretAttributes(this, 'PinataSecret', {
-      secretCompleteArn: 'arn:aws:secretsmanager:us-east-2:644039819003:secret:pinata-secret-svGaPt',
+      secretCompleteArn: 'arn:aws:secretsmanager:us-east-1:058264242741:secret:pinata-secret-svGaPt',
     })
 
     const hostedZone = sm.Secret.fromSecretAttributes(this, 'HostedZone', {
-      secretCompleteArn: 'arn:aws:secretsmanager:us-east-2:644039819003:secret:hosted-zone-JmPDNV',
+      secretCompleteArn: 'arn:aws:secretsmanager:us-east-1:058264242741:secret:hosted-zone-JmPDNV',
     })
 
     const internalApiKey = sm.Secret.fromSecretAttributes(this, 'internal-api-key', {
-      secretCompleteArn: 'arn:aws:secretsmanager:us-east-2:644039819003:secret:routing-api-internal-api-key-Z68NmB',
+      secretCompleteArn: 'arn:aws:secretsmanager:us-east-1:058264242741:secret:routing-api-internal-api-key-Z68NmB',
     })
 
     const routingApiNewSecrets = sm.Secret.fromSecretAttributes(this, 'RoutingApiNewSecrets', {
-      secretCompleteArn: 'arn:aws:secretsmanager:us-east-2:644039819003:secret:RoutingApiNewSecrets-7EijpM',
+      secretCompleteArn: 'arn:aws:secretsmanager:us-east-1:058264242741:secret:RoutingApiNewSecrets-7EijpM',
     })
 
     // Load RPC provider URLs from AWS secret
@@ -179,43 +179,45 @@ export class RoutingAPIPipeline extends Stack {
     // Load RPC provider URLs from AWS secret (for RPC Gateway)
     const RPC_GATEWAY_PROVIDERS = [
       // Optimism
-      'INFURA_10',
-      'QUICKNODE_10',
-      'ALCHEMY_10',
+      // 'INFURA_10',
+      // 'QUICKNODE_10',
+      // 'ALCHEMY_10',
       // Polygon
-      'QUICKNODE_137',
-      'INFURA_137',
-      'ALCHEMY_137',
+      // 'QUICKNODE_137',
+      // 'INFURA_137',
+      // 'ALCHEMY_137',
       // Celo
-      'QUICKNODE_42220',
-      'INFURA_42220',
+      // 'QUICKNODE_42220',
+      // 'INFURA_42220',
       // Avalanche
-      'INFURA_43114',
-      'QUICKNODE_43114',
-      'NIRVANA_43114',
+      // 'INFURA_43114',
+      // 'QUICKNODE_43114',
+      // 'NIRVANA_43114',
       // BNB
-      'QUICKNODE_56',
+      // 'QUICKNODE_56',
       // Base
-      'QUICKNODE_8453',
-      'INFURA_8453',
-      'ALCHEMY_8453',
-      'NIRVANA_8453',
+      // 'QUICKNODE_8453',
+      // 'INFURA_8453',
+      // 'ALCHEMY_8453',
+      // 'NIRVANA_8453',
       // Sepolia
-      'INFURA_11155111',
-      'ALCHEMY_11155111',
+      // 'INFURA_11155111',
+      // 'ALCHEMY_11155111',
       // Arbitrum
-      'INFURA_42161',
-      'QUICKNODE_42161',
-      'NIRVANA_42161',
-      'ALCHEMY_42161',
+      // 'INFURA_42161',
+      // 'QUICKNODE_42161',
+      // 'NIRVANA_42161',
+      // 'ALCHEMY_42161',
       // Ethereum
-      'INFURA_1',
-      'QUICKNODE_1',
-      'NIRVANA_1',
-      'ALCHEMY_1',
+      // 'INFURA_1',
+      // 'QUICKNODE_1',
+      // 'NIRVANA_1',
+      // 'ALCHEMY_1',
       // Blast
-      'QUICKNODE_81457',
-      'INFURA_81457',
+      // 'QUICKNODE_81457',
+      // 'INFURA_81457',
+      // Mode
+      'RPC_919'
     ]
     for (const provider of RPC_GATEWAY_PROVIDERS) {
       jsonRpcProviders[provider] = jsonRpcProvidersSecret.secretValueFromJson(provider).toString()
@@ -224,9 +226,9 @@ export class RoutingAPIPipeline extends Stack {
       })
     }
 
-    // Beta us-east-2
-    const betaUsEast2Stage = new RoutingAPIStage(this, 'beta-us-east-2', {
-      env: { account: '145079444317', region: 'us-east-2' },
+    // Beta us-east-1
+    const betaUsEast2Stage = new RoutingAPIStage(this, 'beta-us-east-1', {
+      env: { account: '058264242741', region: 'us-east-1' },
       jsonRpcProviders: jsonRpcProviders,
       internalApiKey: internalApiKey.secretValue.toString(),
       provisionedConcurrency: 1,
@@ -247,14 +249,14 @@ export class RoutingAPIPipeline extends Stack {
 
     this.addIntegTests(code, betaUsEast2Stage, betaUsEast2AppStage)
 
-    // Prod us-east-2
-    const prodUsEast2Stage = new RoutingAPIStage(this, 'prod-us-east-2', {
-      env: { account: '606857263320', region: 'us-east-2' },
+    // Prod us-east-1
+    const prodUsEast1Stage = new RoutingAPIStage(this, 'prod-us-east-1', {
+      env: { account: '058264242741', region: 'us-east-1' },
       jsonRpcProviders: jsonRpcProviders,
       internalApiKey: internalApiKey.secretValue.toString(),
       provisionedConcurrency: 70,
       ethGasStationInfoUrl: ethGasStationInfoUrl.secretValue.toString(),
-      chatbotSNSArn: 'arn:aws:sns:us-east-2:644039819003:SlackChatbotTopic',
+      chatbotSNSArn: 'arn:aws:sns:us-east-1:058264242741:SlackChatbotTopic',
       stage: STAGE.PROD,
       route53Arn: route53Arn.secretValueFromJson('arn').toString(),
       pinata_key: pinataApi.secretValueFromJson('pinata-api-key').toString(),
@@ -267,14 +269,14 @@ export class RoutingAPIPipeline extends Stack {
       alchemyQueryKey: routingApiNewSecrets.secretValueFromJson('alchemy-query-key').toString(),
     })
 
-    const prodUsEast2AppStage = pipeline.addStage(prodUsEast2Stage)
+    const prodUsEast2AppStage = pipeline.addStage(prodUsEast1Stage)
 
-    this.addIntegTests(code, prodUsEast2Stage, prodUsEast2AppStage)
+    this.addIntegTests(code, prodUsEast1Stage, prodUsEast2AppStage)
 
     const slackChannel = chatbot.SlackChannelConfiguration.fromSlackChannelConfigurationArn(
       this,
       'SlackChannel',
-      'arn:aws:chatbot::644039819003:chat-configuration/slack-channel/eng-ops-slack-chatbot'
+      'arn:aws:chatbot::058264242741:chat-configuration/slack-channel/eng-ops-slack-chatbot'
     )
 
     pipeline.buildPipeline()
@@ -292,7 +294,7 @@ export class RoutingAPIPipeline extends Stack {
       projectName: `IntegTests-${routingAPIStage.stageName}`,
       input: sourceArtifact,
       envFromCfnOutputs: {
-        UNISWAP_ROUTING_API: routingAPIStage.url,
+        UDONSWAP_ROUTING_API: routingAPIStage.url,
       },
       buildEnvironment: {
         environmentVariables: {
@@ -308,7 +310,7 @@ export class RoutingAPIPipeline extends Stack {
       },
       commands: [
         'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm ci',
-        'echo "UNISWAP_ROUTING_API=${UNISWAP_ROUTING_API}" > .env',
+        'echo "UDONSWAP_ROUTING_API=${UDONSWAP_ROUTING_API}" > .env',
         'echo "ARCHIVE_NODE_RPC=${ARCHIVE_NODE_RPC}" >> .env',
         'npm install',
         'npm run build',
@@ -323,58 +325,60 @@ export class RoutingAPIPipeline extends Stack {
 const app = new cdk.App()
 
 const jsonRpcProviders = {
-  WEB3_RPC_1: process.env.WEB3_RPC_1!,
-  WEB3_RPC_11155111: process.env.WEB3_RPC_11155111!,
-  WEB3_RPC_44787: process.env.WEB3_RPC_44787!,
-  WEB3_RPC_80001: process.env.WEB3_RPC_80001!,
-  WEB3_RPC_81457: process.env.WEB3_RPC_81457!,
-  WEB3_RPC_42161: process.env.WEB3_RPC_42161!,
-  WEB3_RPC_421613: process.env.WEB3_RPC_421613!,
-  WEB3_RPC_10: process.env.WEB3_RPC_10!,
-  WEB3_RPC_137: process.env.WEB3_RPC_137!,
-  WEB3_RPC_42220: process.env.WEB3_RPC_42220!,
-  WEB3_RPC_43114: process.env.WEB3_RPC_43114!,
-  WEB3_RPC_56: process.env.WEB3_RPC_56!,
-  WEB3_RPC_8453: process.env.WEB3_RPC_8453!,
+  // WEB3_RPC_1: process.env.WEB3_RPC_1!,
+  // WEB3_RPC_11155111: process.env.WEB3_RPC_11155111!,
+  // WEB3_RPC_44787: process.env.WEB3_RPC_44787!,
+  // WEB3_RPC_80001: process.env.WEB3_RPC_80001!,
+  // WEB3_RPC_81457: process.env.WEB3_RPC_81457!,
+  // WEB3_RPC_42161: process.env.WEB3_RPC_42161!,
+  // WEB3_RPC_421613: process.env.WEB3_RPC_421613!,
+  // WEB3_RPC_10: process.env.WEB3_RPC_10!,
+  // WEB3_RPC_137: process.env.WEB3_RPC_137!,
+  // WEB3_RPC_42220: process.env.WEB3_RPC_42220!,
+  // WEB3_RPC_43114: process.env.WEB3_RPC_43114!,
+  // WEB3_RPC_56: process.env.WEB3_RPC_56!,
+  // WEB3_RPC_8453: process.env.WEB3_RPC_8453!,
   // The followings are for RPC Gateway
   // Optimism
-  INFURA_10: process.env.INFURA_10!,
-  QUICKNODE_10: process.env.QUICKNODE_10!,
-  ALCHEMY_10: process.env.ALCHEMY_10!,
+  // INFURA_10: process.env.INFURA_10!,
+  // QUICKNODE_10: process.env.QUICKNODE_10!,
+  // ALCHEMY_10: process.env.ALCHEMY_10!,
   // Polygon
-  QUICKNODE_137: process.env.QUICKNODE_137!,
-  INFURA_137: process.env.INFURA_137!,
-  ALCHEMY_137: process.env.ALCHEMY_137!,
+  // QUICKNODE_137: process.env.QUICKNODE_137!,
+  // INFURA_137: process.env.INFURA_137!,
+  // ALCHEMY_137: process.env.ALCHEMY_137!,
   // Celo
-  QUICKNODE_42220: process.env.QUICKNODE_42220!,
-  INFURA_42220: process.env.INFURA_42220!,
+  // QUICKNODE_42220: process.env.QUICKNODE_42220!,
+  // INFURA_42220: process.env.INFURA_42220!,
   // Avalanche
-  INFURA_43114: process.env.INFURA_43114!,
-  QUICKNODE_43114: process.env.QUICKNODE_43114!,
-  NIRVANA_43114: process.env.NIRVANA_43114!,
+  // INFURA_43114: process.env.INFURA_43114!,
+  // QUICKNODE_43114: process.env.QUICKNODE_43114!,
+  // NIRVANA_43114: process.env.NIRVANA_43114!,
   // BNB
-  QUICKNODE_56: process.env.QUICKNODE_56!,
+  // QUICKNODE_56: process.env.QUICKNODE_56!,
   // Base
-  QUICKNODE_8453: process.env.QUICKNODE_8453!,
-  INFURA_8453: process.env.INFURA_8453!,
-  ALCHEMY_8453: process.env.ALCHEMY_8453!,
-  NIRVANA_8453: process.env.NIRVANA_8453!,
+  // QUICKNODE_8453: process.env.QUICKNODE_8453!,
+  // INFURA_8453: process.env.INFURA_8453!,
+  // ALCHEMY_8453: process.env.ALCHEMY_8453!,
+  // NIRVANA_8453: process.env.NIRVANA_8453!,
   // Sepolia
-  INFURA_11155111: process.env.INFURA_11155111!,
-  ALCHEMY_11155111: process.env.ALCHEMY_11155111!,
+  // INFURA_11155111: process.env.INFURA_11155111!,
+  // ALCHEMY_11155111: process.env.ALCHEMY_11155111!,
   // Arbitrum
-  INFURA_42161: process.env.INFURA_42161!,
-  QUICKNODE_42161: process.env.QUICKNODE_42161!,
-  NIRVANA_42161: process.env.NIRVANA_42161!,
-  ALCHEMY_42161: process.env.ALCHEMY_42161!,
+  // INFURA_42161: process.env.INFURA_42161!,
+  // QUICKNODE_42161: process.env.QUICKNODE_42161!,
+  // NIRVANA_42161: process.env.NIRVANA_42161!,
+  // ALCHEMY_42161: process.env.ALCHEMY_42161!,
   // Ethereum
-  INFURA_1: process.env.INFURA_1!,
-  QUICKNODE_1: process.env.QUICKNODE_1!,
-  NIRVANA_1: process.env.NIRVANA_1!,
-  ALCHEMY_1: process.env.ALCHEMY_1!,
+  // INFURA_1: process.env.INFURA_1!,
+  // QUICKNODE_1: process.env.QUICKNODE_1!,
+  // NIRVANA_1: process.env.NIRVANA_1!,
+  // ALCHEMY_1: process.env.ALCHEMY_1!,
   // Blast
-  QUICKNODE_81457: process.env.QUICKNODE_81457!,
-  INFURA_81457: process.env.INFURA_81457!,
+  // QUICKNODE_81457: process.env.QUICKNODE_81457!,
+  // INFURA_81457: process.env.INFURA_81457!,
+  // Mode
+  RPC_919 : process.env.RPC_919!,
 }
 
 // Local dev stack
@@ -397,5 +401,5 @@ new RoutingAPIStack(app, 'RoutingAPIStack', {
 })
 
 new RoutingAPIPipeline(app, 'RoutingAPIPipelineStack', {
-  env: { account: '644039819003', region: 'us-east-2' },
+  env: { account: '058264242741', region: 'us-east-1' },
 })

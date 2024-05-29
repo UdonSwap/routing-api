@@ -32,7 +32,7 @@ export class FallbackHandler {
 
   private buildHandler() {
     return metricScope((metricsLogger: MetricsLogger) => async (event: object): Promise<APIGatewayProxyResult> => {
-      metricsLogger.setNamespace('Uniswap')
+      metricsLogger.setNamespace('Udonswap')
       metricsLogger.setDimensions({ Service: 'RoutingAPI' })
       setGlobalMetric(new AWSMetricsLogger(metricsLogger))
 

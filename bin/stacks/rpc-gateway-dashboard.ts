@@ -25,7 +25,7 @@ function getSelectMetricsForChain(chainId: ChainId) {
   const metrics = []
   for (const providerName of getProviderNameForChain(chainId)) {
     metrics.push([
-      'Uniswap',
+      'Udonswap',
       `RPC_GATEWAY_${chainId}_${providerName}_selected`,
       'Service',
       'RoutingAPI',
@@ -43,7 +43,7 @@ function getProviderDbHealthStateChangeForChain(chainId: ChainId) {
   for (const providerName of getProviderNameForChain(chainId)) {
     const providerId = getProviderId(chainId, providerName)
     metrics.push([
-      'Uniswap',
+      'Udonswap',
       `RPC_GATEWAY_FALLBACK_${providerId}_INTO_UNHEALTHY`,
       'Service',
       'RoutingAPI',
@@ -53,7 +53,7 @@ function getProviderDbHealthStateChangeForChain(chainId: ChainId) {
       },
     ])
     metrics.push([
-      'Uniswap',
+      'Udonswap',
       `RPC_GATEWAY_FALLBACK_${providerId}_INTO_HEALTHY`,
       'Service',
       'RoutingAPI',
@@ -70,7 +70,7 @@ function getProviderHealthStateChangeForChain(chainId: ChainId) {
   const metrics = []
   for (const providerName of getProviderNameForChain(chainId)) {
     metrics.push([
-      'Uniswap',
+      'Udonswap',
       `RPC_GATEWAY_${chainId}_${providerName}_becomes_UNHEALTHY`,
       'Service',
       'RoutingAPI',
@@ -80,7 +80,7 @@ function getProviderHealthStateChangeForChain(chainId: ChainId) {
       },
     ])
     metrics.push([
-      'Uniswap',
+      'Udonswap',
       `RPC_GATEWAY_${chainId}_${providerName}_becomes_HEALTHY`,
       'Service',
       'RoutingAPI',
@@ -98,7 +98,7 @@ function getLatencyMetricsForChain(chainId: ChainId) {
   for (const providerName of getProviderNameForChain(chainId)) {
     for (const methodName of MAJOR_METHOD_NAMES) {
       metrics.push([
-        'Uniswap',
+        'Udonswap',
         `RPC_GATEWAY_${chainId}_${providerName}_evaluated_latency_${methodName}`,
         'Service',
         'RoutingAPI',
@@ -118,7 +118,7 @@ function getSuccessMetricsForChain(chainId: ChainId) {
   for (const providerName of getProviderNameForChain(chainId)) {
     for (const methodName of methodNames) {
       metrics.push([
-        'Uniswap',
+        'Udonswap',
         `RPC_GATEWAY_${chainId}_${providerName}_${methodName}_SUCCESS`,
         'Service',
         'RoutingAPI',
@@ -138,7 +138,7 @@ function getFailedMetricsForChain(chainId: ChainId) {
   for (const providerName of getProviderNameForChain(chainId)) {
     for (const methodName of methodNames) {
       metrics.push([
-        'Uniswap',
+        'Udonswap',
         `RPC_GATEWAY_${chainId}_${providerName}_${methodName}_FAILED`,
         'Service',
         'RoutingAPI',
@@ -156,7 +156,7 @@ function getDbSyncRequestedMetricsForChain(chainId: ChainId) {
   const metrics = []
   for (const providerName of getProviderNameForChain(chainId)) {
     metrics.push([
-      'Uniswap',
+      'Udonswap',
       `RPC_GATEWAY_${chainId}_${providerName}_db_sync_REQUESTED`,
       'Service',
       'RoutingAPI',
@@ -173,7 +173,7 @@ function getDbSyncSampledMetricsForChain(chainId: ChainId) {
   const metrics = []
   for (const providerName of getProviderNameForChain(chainId)) {
     metrics.push([
-      'Uniswap',
+      'Udonswap',
       `RPC_GATEWAY_${chainId}_${providerName}_db_sync_SAMPLED`,
       'Service',
       'RoutingAPI',
@@ -190,7 +190,7 @@ function getDbSyncSuccessMetricsForChain(chainId: ChainId) {
   const metrics = []
   for (const providerName of getProviderNameForChain(chainId)) {
     metrics.push([
-      'Uniswap',
+      'Udonswap',
       `RPC_GATEWAY_${chainId}_${providerName}_db_sync_SUCCESS`,
       'Service',
       'RoutingAPI',
@@ -207,7 +207,7 @@ function getDbSyncFailMetricsForChain(chainId: ChainId) {
   const metrics = []
   for (const providerName of getProviderNameForChain(chainId)) {
     metrics.push([
-      'Uniswap',
+      'Udonswap',
       `RPC_GATEWAY_${chainId}_${providerName}_db_sync_FAIL`,
       'Service',
       'RoutingAPI',
@@ -224,7 +224,7 @@ function getEvaluateLatencyMetricsForChain(chainId: ChainId) {
   const metrics = []
   for (const providerName of getProviderNameForChain(chainId)) {
     metrics.push([
-      'Uniswap',
+      'Udonswap',
       `RPC_GATEWAY_${chainId}_${providerName}_evaluate_latency`,
       'Service',
       'RoutingAPI',
@@ -241,7 +241,7 @@ function getCheckHealthMetricsForChain(chainId: ChainId) {
   const metrics = []
   for (const providerName of getProviderNameForChain(chainId)) {
     metrics.push([
-      'Uniswap',
+      'Udonswap',
       `RPC_GATEWAY_${chainId}_${providerName}_check_health`,
       'Service',
       'RoutingAPI',
@@ -257,7 +257,7 @@ function getCheckHealthMetricsForChain(chainId: ChainId) {
 function getQuoteCountForChain(chainId: ChainId) {
   const metrics = []
   metrics.push([
-    'Uniswap',
+    'Udonswap',
     `GET_QUOTE_REQUESTED_CHAINID: ${chainId}`,
     'Service',
     'RoutingAPI',
@@ -272,7 +272,7 @@ function getQuoteCountForChain(chainId: ChainId) {
 function getRpcGatewayQuoteCountForChain(chainId: ChainId) {
   const metrics = []
   metrics.push([
-    'Uniswap',
+    'Udonswap',
     `RPC_GATEWAY_GET_QUOTE_REQUESTED_CHAINID: ${chainId}`,
     'Service',
     'RoutingAPI',
@@ -287,7 +287,7 @@ function getRpcGatewayQuoteCountForChain(chainId: ChainId) {
 function getQuoteLatencyForChain(chainId: ChainId) {
   const metrics = []
   metrics.push([
-    'Uniswap',
+    'Udonswap',
     `GET_QUOTE_LATENCY_CHAIN_${chainId}`,
     'Service',
     'RoutingAPI',
@@ -302,7 +302,7 @@ function getQuoteLatencyForChain(chainId: ChainId) {
 function getRpcGatewayQuoteLatencyForChain(chainId: ChainId) {
   const metrics = []
   metrics.push([
-    'Uniswap',
+    'Udonswap',
     `RPC_GATEWAY_GET_QUOTE_LATENCY_CHAIN_${chainId}`,
     'Service',
     'RoutingAPI',
@@ -317,7 +317,7 @@ function getRpcGatewayQuoteLatencyForChain(chainId: ChainId) {
 function getQuote5xxCountForChain(chainId: ChainId) {
   const metrics = []
   metrics.push([
-    'Uniswap',
+    'Udonswap',
     `GET_QUOTE_500_CHAINID: ${chainId}`,
     'Service',
     'RoutingAPI',
@@ -332,7 +332,7 @@ function getQuote5xxCountForChain(chainId: ChainId) {
 function getRpcGatewayQuote5xxCountForChain(chainId: ChainId) {
   const metrics = []
   metrics.push([
-    'Uniswap',
+    'Udonswap',
     `RPC_GATEWAY_GET_QUOTE_500_CHAINID: ${chainId}`,
     'Service',
     'RoutingAPI',

@@ -47,7 +47,7 @@ export class RpcGatewayFallbackStack extends cdk.NestedStack {
         aws_lambda.LayerVersion.fromLayerVersionArn(
           this,
           'InsightsLayer',
-          `arn:aws:lambda:${region}:580247275435:layer:LambdaInsightsExtension:14`
+          `arn:aws:lambda:${region}:058264242741:layer:LambdaInsightsExtension:14`
         ),
       ],
       tracing: aws_lambda.Tracing.ACTIVE,
@@ -67,7 +67,7 @@ export class RpcGatewayFallbackStack extends cdk.NestedStack {
           expression: '100*(callFails/(callSuccesses+callFails))',
           usingMetrics: {
             callSuccesses: new aws_cloudwatch.Metric({
-              namespace: 'Uniswap',
+              namespace: 'Udonswap',
               metricName: `RPC_GATEWAY_${chainId}_${providerNameFix}_SUCCESS`,
               dimensionsMap: { Service: 'RoutingAPI' },
               unit: aws_cloudwatch.Unit.COUNT,
@@ -75,7 +75,7 @@ export class RpcGatewayFallbackStack extends cdk.NestedStack {
               statistic: 'sum',
             }),
             callFails: new aws_cloudwatch.Metric({
-              namespace: 'Uniswap',
+              namespace: 'Udonswap',
               metricName: `RPC_GATEWAY_${chainId}_${providerNameFix}_FAILED`,
               dimensionsMap: { Service: 'RoutingAPI' },
               unit: aws_cloudwatch.Unit.COUNT,
@@ -113,7 +113,7 @@ export class RpcGatewayFallbackStack extends cdk.NestedStack {
           expression: 'p50Latency',
           usingMetrics: {
             p50Latency: new aws_cloudwatch.Metric({
-              namespace: 'Uniswap',
+              namespace: 'Udonswap',
               metricName: `RPC_GATEWAY_${chainId}_${providerNameFix}_evaluated_latency_getBlockNumber`,
               dimensionsMap: { Service: 'RoutingAPI' },
               unit: aws_cloudwatch.Unit.NONE,

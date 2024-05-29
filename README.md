@@ -94,7 +94,7 @@ The end-to-end tests fetch quotes from your deployed API, then execute the swaps
 1. First deploy your test API using the instructions above. Then update your `.env` file with the URL of the API, and the RPC URL of an archive node:
 
    ```
-   UNISWAP_ROUTING_API='...'
+   UDONSWAP_ROUTING_API='...'
    ARCHIVE_NODE_RPC='...'
    ```
 

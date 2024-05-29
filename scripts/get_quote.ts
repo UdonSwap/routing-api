@@ -21,7 +21,7 @@ dotenv.config()
   }
 
   const response: AxiosResponse<QuoteResponse> = await axios.post<QuoteResponse>(
-    process.env.UNISWAP_ROUTING_API! + 'quote',
+    process.env.UDONSWAP_ROUTING_API! + 'quote',
     quotePost
   )
 
