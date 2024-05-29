@@ -1,4 +1,4 @@
-import { SUPPORTED_CHAINS } from 'u-smart-order-router-v3'
+import { SUPPORTED_CHAINS } from 'udonswap-smart-order-router-v3'
 import * as cdk from 'aws-cdk-lib'
 import { ChainId } from 'udonswap-core'
 import { CfnOutput, Duration } from 'aws-cdk-lib'

@@ -38,7 +38,7 @@ import {
   V2PoolProvider,
   V2QuoteProvider,
   V3PoolProvider,
-} from 'u-smart-order-router-v3'
+} from 'udonswap-smart-order-router-v3'
 import { TokenList } from 'udonswap-token-lists'
 import { default as bunyan, default as Logger } from 'bunyan'
 import _ from 'lodash'
@@ -54,8 +54,8 @@ import { DefaultEVMClient } from './evm/EVMClient'
 import { InstrumentedEVMProvider } from './evm/provider/InstrumentedEVMProvider'
 import { deriveProviderName } from './evm/provider/ProviderName'
 import { V2DynamoCache } from './pools/pool-caching/v2/v2-dynamo-cache'
-import { OnChainTokenFeeFetcher } from 'u-smart-order-router-v3/build/main/providers/token-fee-fetcher'
-import { PortionProvider } from 'u-smart-order-router-v3/build/main/providers/portion-provider'
+import { OnChainTokenFeeFetcher } from 'udonswap-smart-order-router-v3/build/main/providers/token-fee-fetcher'
+import { PortionProvider } from 'udonswap-smart-order-router-v3/build/main/providers/portion-provider'
 import { GlobalRpcProviders } from '../rpc/GlobalRpcProviders'
 import { StaticJsonRpcProvider } from '@ethersproject/providers'
 import { TrafficSwitchOnChainQuoteProvider } from './quote/provider-migration/v3/traffic-switch-on-chain-quote-provider'

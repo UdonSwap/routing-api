@@ -1,4 +1,4 @@
-import { CachedRoutes } from 'u-smart-order-router-v3'
+import { CachedRoutes } from 'udonswap-smart-order-router-v3'
 import { ChainId, TradeType } from 'udonswap-core'
 import { Protocol } from 'udonswap-router'
 import { MarshalledToken, TokenMarshaller } from './token-marshaller'

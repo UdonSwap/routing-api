@@ -7,7 +7,7 @@ import {
   MetricLoggerUnit,
   V2SubgraphPool,
   V3SubgraphPool,
-} from 'u-smart-order-router-v3'
+} from 'udonswap-smart-order-router-v3'
 import { S3 } from 'aws-sdk'
 import { ChainId } from 'udonswap-core'
 import NodeCache from 'node-cache'

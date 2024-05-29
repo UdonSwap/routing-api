@@ -7,7 +7,7 @@ import {
   setGlobalLogger,
   setGlobalMetric,
   V3HeuristicGasModelFactory,
-} from 'u-smart-order-router-v3'
+} from 'udonswap-smart-order-router-v3'
 import { MetricsLogger } from 'aws-embedded-metrics'
 import { APIGatewayProxyEvent, Context } from 'aws-lambda'
 import { default as bunyan, default as Logger } from 'bunyan'

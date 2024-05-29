@@ -4,7 +4,7 @@ import {
   USDC_MODE,
   V3PoolProvider,
   WRAPPED_NATIVE_CURRENCY,
-} from 'u-smart-order-router-v3'
+} from 'udonswap-smart-order-router-v3'
 import { Pool } from 'udonswap-v3'
 import {
   buildMockV3PoolAccessor,
@@ -15,9 +15,9 @@ import {
   WETH9_USDT_LOW,
 } from './mocked-data'
 import sinon from 'sinon'
-import { V3Route } from 'u-smart-order-router-v3/build/main/routers'
+import { V3Route } from 'udonswap-smart-order-router-v3/build/main/routers'
 import { ChainId, CurrencyAmount } from 'udonswap-core'
-import { AmountQuote } from 'u-smart-order-router-v3/build/main/providers/on-chain-quote-provider'
+import { AmountQuote } from 'udonswap-smart-order-router-v3/build/main/providers/on-chain-quote-provider'
 import { BigNumber } from 'ethers'
 
 export function getMockedV3PoolProvider(

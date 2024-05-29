@@ -25,12 +25,12 @@ import {
   // USDC_NATIVE_POLYGON,
   // USDT_MODE,
   // WBTC_MODE,
-} from 'u-smart-order-router-v3'
+} from 'udonswap-smart-order-router-v3'
 import {
   PERMIT2_ADDRESS,
   UNIVERSAL_ROUTER_ADDRESS as UNIVERSAL_ROUTER_ADDRESS_BY_CHAIN,
 } from 'udonswap-sdk-universal-router'
-import { MethodParameters } from 'u-smart-order-router-v3'
+import { MethodParameters } from 'udonswap-smart-order-router-v3'
 import { fail } from 'assert'
 import axiosStatic, { AxiosResponse } from 'axios'
 import axiosRetry from 'axios-retry'
@@ -51,7 +51,7 @@ import { DAI_ON, getAmount, getAmountFromToken, Abah072, USDC_ON,
   // USDT_ON,
    WNATIVE_ON } from '../../utils/tokens'
 import { FLAT_PORTION, GREENLIST_TOKEN_PAIRS, Portion } from '../../test-utils/mocked-data'
-import { WRAPPED_NATIVE_CURRENCY } from 'u-smart-order-router-v3/build/main/index'
+import { WRAPPED_NATIVE_CURRENCY } from 'udonswap-smart-order-router-v3/build/main/index'
 
 const { ethers } = hre
 

@@ -9,14 +9,14 @@ import {
   DEFAULT_GAS_ERROR_FAILURE_OVERRIDES,
   DEFAULT_RETRY_OPTIONS,
   DEFAULT_SUCCESS_RATE_FAILURE_OVERRIDES,
-} from 'u-smart-order-router-v3/build/main/util/onchainQuoteProviderConfigs'
+} from 'udonswap-smart-order-router-v3/build/main/util/onchainQuoteProviderConfigs'
 import { 
   // CHAIN_TO_ADDRESSES_MAP, 
   ChainId } from 'udonswap-core'
 import AsyncRetry from 'async-retry'
 import { 
   // AddressMap, 
-  BatchParams, BlockNumberConfig, FailureOverrides } from 'u-smart-order-router-v3'
+  BatchParams, BlockNumberConfig, FailureOverrides } from 'udonswap-smart-order-router-v3'
 import { Protocol } from 'udonswap-router'
 
 export const RETRY_OPTIONS: { [chainId: number]: AsyncRetry.Options | undefined } = {

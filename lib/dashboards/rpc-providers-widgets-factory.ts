@@ -2,7 +2,7 @@ import { WidgetsFactory } from './core/widgets-factory'
 import { Widget } from './core/model/widget'
 import { ChainId } from 'udonswap-core'
 import _ from 'lodash'
-import { ID_TO_NETWORK_NAME } from 'u-smart-order-router-v3/build/main/util/chains'
+import { ID_TO_NETWORK_NAME } from 'udonswap-smart-order-router-v3/build/main/util/chains'
 import { ProviderName } from '../handlers/evm/provider/ProviderName'
 
 const ID_TO_PROVIDER = (id: ChainId): string => {

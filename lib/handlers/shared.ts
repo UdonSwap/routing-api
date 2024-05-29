@@ -5,7 +5,7 @@ import {
   LowerCaseStringArray,
   MapWithLowerCaseKey,
   ProtocolPoolSelection,
-} from 'u-smart-order-router-v3'
+} from 'udonswap-smart-order-router-v3'
 import { FeeOptions } from 'udonswap-v3'
 import { FlatFeeOptions } from 'udonswap-sdk-universal-router'
 

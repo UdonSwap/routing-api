@@ -1,5 +1,5 @@
 import { ChainId, TradeType } from 'udonswap-core'
-import { CachedRoutes } from 'u-smart-order-router-v3'
+import { CachedRoutes } from 'udonswap-smart-order-router-v3'
 
 interface PairTradeTypeChainIdArgs {
   tokenIn: string

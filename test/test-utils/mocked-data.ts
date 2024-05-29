@@ -5,12 +5,12 @@ import {
   USDC_MODE as USDC,
   USDT_MODE as USDT,
   WRAPPED_NATIVE_CURRENCY,
-} from 'u-smart-order-router-v3/build/main/index'
-import { V3PoolAccessor } from 'u-smart-order-router-v3/build/main/providers/v3/pool-provider'
+} from 'udonswap-smart-order-router-v3/build/main/index'
+import { V3PoolAccessor } from 'udonswap-smart-order-router-v3/build/main/providers/v3/pool-provider'
 import _ from 'lodash'
 import { ChainId, Currency, ETHER, WETH9 } from 'udonswap-core'
 import { DAI_ON, USDC_ON, USDT_ON } from '../utils/tokens'
-import { WBTC_MODE } from 'u-smart-order-router-v3'
+import { WBTC_MODE } from 'udonswap-smart-order-router-v3'
 
 export const USDC_DAI_LOW = new Pool(USDC, DAI, FeeAmount.LOW, encodeSqrtRatioX96(1, 1), 10, 0)
 export const USDC_DAI_MEDIUM = new Pool(USDC, DAI, FeeAmount.MEDIUM, encodeSqrtRatioX96(1, 1), 8, 0)

@@ -10,7 +10,7 @@ import {
   TransactionReceipt,
   TransactionResponse,
 } from '@ethersproject/abstract-provider'
-import { metric, MetricLoggerUnit } from 'u-smart-order-router-v3'
+import { metric, MetricLoggerUnit } from 'udonswap-smart-order-router-v3'
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
 import { Network, Networkish } from '@ethersproject/networks'
 import { ConnectionInfo } from '@ethersproject/web'

@@ -1,4 +1,4 @@
-import { IMetric, MetricLoggerUnit } from 'u-smart-order-router-v3'
+import { IMetric, MetricLoggerUnit } from 'udonswap-smart-order-router-v3'
 import { MetricsLogger as AWSEmbeddedMetricsLogger } from 'aws-embedded-metrics'
 
 export class AWSMetricsLogger implements IMetric {

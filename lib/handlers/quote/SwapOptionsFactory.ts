@@ -1,5 +1,5 @@
 import { ChainId, Currency, CurrencyAmount } from 'udonswap-core'
-import { SwapOptions, SwapOptionsSwapRouter02, SwapOptionsUniversalRouter, SwapType } from 'u-smart-order-router-v3'
+import { SwapOptions, SwapOptionsSwapRouter02, SwapOptionsUniversalRouter, SwapType } from 'udonswap-smart-order-router-v3'
 import JSBI from 'jsbi'
 import { TradeTypeParam } from './schema/quote-schema'
 import { computePortionAmount, parseDeadline, parseSlippageTolerance, populateFeeOptions } from '../shared'

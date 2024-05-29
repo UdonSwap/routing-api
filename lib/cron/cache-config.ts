@@ -1,5 +1,5 @@
 import { Protocol } from 'udonswap-router'
-import { V2SubgraphProvider, V3SubgraphProvider } from 'u-smart-order-router-v3'
+import { V2SubgraphProvider, V3SubgraphProvider } from 'udonswap-smart-order-router-v3'
 import { ChainId } from 'udonswap-core'
 
 const v3SubgraphUrlOverride = (chainId: ChainId) => {

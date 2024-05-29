@@ -4,10 +4,10 @@ import { getMockedV3PoolProvider, TEST_ROUTE_TABLE } from '../../../../../../tes
 import { SUPPORTED_POOLS } from '../../../../../../test-utils/mocked-data'
 import { ChainId, Token } from 'udonswap-core'
 import { FeeAmount, Pool } from 'udonswap-v3'
-import { ProviderConfig } from 'u-smart-order-router-v3/build/main/providers/provider'
+import { ProviderConfig } from 'udonswap-smart-order-router-v3/build/main/providers/provider'
 import { expect } from 'chai'
 import { DynamoCachingV3Pool } from '../../../../../../../lib/handlers/pools/pool-caching/v3/cache-dynamo-pool'
-import { log } from 'u-smart-order-router-v3'
+import { log } from 'udonswap-smart-order-router-v3'
 
 describe('DynamoDBCachingV3PoolProvider', async () => {
   setupTables(TEST_ROUTE_TABLE)

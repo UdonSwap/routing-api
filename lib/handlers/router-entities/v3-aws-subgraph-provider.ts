@@ -1,4 +1,4 @@
-import { IV3SubgraphProvider, log, V3SubgraphPool, V3SubgraphProvider } from 'u-smart-order-router-v3'
+import { IV3SubgraphProvider, log, V3SubgraphPool, V3SubgraphProvider } from 'udonswap-smart-order-router-v3'
 import { S3 } from 'aws-sdk'
 import { ChainId } from 'udonswap-core'
 import _ from 'lodash'

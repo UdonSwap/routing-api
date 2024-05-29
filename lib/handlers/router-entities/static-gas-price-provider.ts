@@ -1,4 +1,4 @@
-import { GasPrice, IGasPriceProvider } from 'u-smart-order-router-v3'
+import { GasPrice, IGasPriceProvider } from 'udonswap-smart-order-router-v3'
 import { BigNumber } from 'ethers'
 
 export class StaticGasPriceProvider implements IGasPriceProvider {

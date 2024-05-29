@@ -1,7 +1,7 @@
-import { ICache } from 'u-smart-order-router-v3/build/main/providers/cache'
+import { ICache } from 'udonswap-smart-order-router-v3/build/main/providers/cache'
 import { Pair } from 'udonswap-v2-sdk'
 import { BatchGetItemInput, DocumentClient } from 'aws-sdk/clients/dynamodb'
-import { log, metric, MetricLoggerUnit } from 'u-smart-order-router-v3'
+import { log, metric, MetricLoggerUnit } from 'udonswap-smart-order-router-v3'
 import { MarshalledPair, PairMarshaller } from '../../../marshalling'
 
 export class V2DynamoCache implements ICache<{ pair: Pair; block?: number }> {

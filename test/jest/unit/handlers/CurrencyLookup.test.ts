@@ -1,5 +1,5 @@
 import { describe, expect, jest } from '@jest/globals'
-import { ExtendedEther } from 'u-smart-order-router-v3'
+import { ExtendedEther } from 'udonswap-smart-order-router-v3'
 import { ChainId, Token } from 'udonswap-core'
 import { CurrencyLookup } from '../../../../lib/handlers/CurrencyLookup'
 

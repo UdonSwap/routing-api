@@ -35,7 +35,7 @@ import {
   WRAPPED_NATIVE_CURRENCY,
   // USDC_BASE,
   // USDC_BASE_GOERLI,
-} from 'u-smart-order-router-v3'
+} from 'udonswap-smart-order-router-v3'
 import { ethers } from 'ethers'
 import NodeCache from 'node-cache'
 

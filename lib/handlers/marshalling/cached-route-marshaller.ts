@@ -1,5 +1,5 @@
-import { CachedRoute } from 'u-smart-order-router-v3'
-import { MixedRoute, V2Route, V3Route } from 'u-smart-order-router-v3/build/main/routers'
+import { CachedRoute } from 'udonswap-smart-order-router-v3'
+import { MixedRoute, V2Route, V3Route } from 'udonswap-smart-order-router-v3/build/main/routers'
 import { MarshalledRoute, RouteMarshaller } from './route-marshaller'
 
 export interface MarshalledCachedRoute {

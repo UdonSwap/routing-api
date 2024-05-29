@@ -11,7 +11,7 @@ import {
   SimulationStatus,
   SwapOptions,
   SwapRoute,
-} from 'u-smart-order-router-v3'
+} from 'udonswap-smart-order-router-v3'
 import { Pool } from 'udonswap-v3'
 import JSBI from 'jsbi'
 import _ from 'lodash'

@@ -8,13 +8,13 @@ import {
   metric,
   MetricLoggerUnit,
   routeToString,
-} from 'u-smart-order-router-v3'
+} from 'udonswap-smart-order-router-v3'
 import { AWSError, DynamoDB, Lambda } from 'aws-sdk'
 import { ChainId, Currency, CurrencyAmount, Fraction, Token, TradeType } from 'udonswap-core'
 import { Protocol } from 'udonswap-router'
 import { PairTradeTypeChainId } from './model/pair-trade-type-chain-id'
 import { CachedRoutesMarshaller } from '../../marshalling/cached-routes-marshaller'
-import { MixedRoute, V2Route, V3Route } from 'u-smart-order-router-v3/build/main/routers'
+import { MixedRoute, V2Route, V3Route } from 'udonswap-smart-order-router-v3/build/main/routers'
 import { PromiseResult } from 'aws-sdk/lib/request'
 
 interface ConstructorParams {

@@ -3,7 +3,7 @@ import { Factory } from 'fishery'
 import { ChainId, Percent, Token } from 'udonswap-core'
 import { TradeTypeParam } from '../../../../lib/handlers/quote/schema/quote-schema'
 import { expect, jest } from '@jest/globals'
-import { SwapType } from 'u-smart-order-router-v3'
+import { SwapType } from 'udonswap-smart-order-router-v3'
 import { utils } from 'ethers'
 import { UNIVERSAL_ROUTER_ADDRESS } from 'udonswap-sdk-universal-router'
 

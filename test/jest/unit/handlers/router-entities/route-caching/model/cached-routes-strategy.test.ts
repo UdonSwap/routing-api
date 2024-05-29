@@ -1,4 +1,4 @@
-import { CacheMode } from 'u-smart-order-router-v3'
+import { CacheMode } from 'udonswap-smart-order-router-v3'
 import { ChainId, CurrencyAmount, Token, TradeType } from 'udonswap-core'
 import {
   CachedRoutesBucket,

@@ -9,7 +9,7 @@ import {
 } from '../../../../lib/handlers/shared'
 import { getAmount } from '../../../utils/tokens'
 import { CurrencyAmount, Percent } from 'udonswap-core'
-import { DAI_MODE, SwapOptions, SwapType } from 'u-smart-order-router-v3'
+import { DAI_MODE, SwapOptions, SwapType } from 'udonswap-smart-order-router-v3'
 
 describe('shared', () => {
   it('parsePortionPercent', () => {

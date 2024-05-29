@@ -1,13 +1,13 @@
 import sinon, { SinonSpy } from 'sinon'
-import { metric } from 'u-smart-order-router-v3/build/main/util/metric'
-import { MetricLoggerUnit, RouteWithQuotes, USDC_MODE, WRAPPED_NATIVE_CURRENCY } from 'u-smart-order-router-v3'
+import { metric } from 'udonswap-smart-order-router-v3/build/main/util/metric'
+import { MetricLoggerUnit, RouteWithQuotes, USDC_MODE, WRAPPED_NATIVE_CURRENCY } from 'udonswap-smart-order-router-v3'
 import { TrafficSwitchOnChainQuoteProvider } from '../../../../../../lib/handlers/quote/provider-migration/v3/traffic-switch-on-chain-quote-provider'
 import { ChainId, CurrencyAmount } from 'udonswap-core'
-import { V3Route } from 'u-smart-order-router-v3/build/main/routers'
+import { V3Route } from 'udonswap-smart-order-router-v3/build/main/routers'
 import { USDC_WETH_LOW } from '../../../../../test-utils/mocked-data'
 import { getMockedOnChainQuoteProvider } from '../../../../../test-utils/mocked-dependencies'
-import { ProviderConfig } from 'u-smart-order-router-v3/build/main/providers/provider'
-import { AmountQuote } from 'u-smart-order-router-v3/build/main/providers/on-chain-quote-provider'
+import { ProviderConfig } from 'udonswap-smart-order-router-v3/build/main/providers/provider'
+import { AmountQuote } from 'udonswap-smart-order-router-v3/build/main/providers/on-chain-quote-provider'
 import { BigNumber } from 'ethers'
 
 describe('TrafficSwitchOnChainQuoteProvider', () => {

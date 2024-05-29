@@ -1,4 +1,4 @@
-import { MixedRoute, V2Route, V3Route } from 'u-smart-order-router-v3/build/main/routers'
+import { MixedRoute, V2Route, V3Route } from 'udonswap-smart-order-router-v3/build/main/routers'
 import { Protocol } from 'udonswap-router'
 import { MarshalledToken, TokenMarshaller } from './token-marshaller'
 import { MarshalledPair, PairMarshaller } from './pair-marshaller'

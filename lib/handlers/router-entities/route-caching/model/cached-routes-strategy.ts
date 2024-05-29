@@ -1,6 +1,6 @@
 import { ChainId, Currency, CurrencyAmount, TradeType } from 'udonswap-core'
 import { CachedRoutesBucket } from './cached-routes-bucket'
-import { CacheMode } from 'u-smart-order-router-v3'
+import { CacheMode } from 'udonswap-smart-order-router-v3'
 
 interface CachedRoutesStrategyArgs {
   pair: string

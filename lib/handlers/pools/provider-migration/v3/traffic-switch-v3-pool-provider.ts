@@ -1,7 +1,7 @@
-import { IV3PoolProvider, log, metric, MetricLoggerUnit, V3PoolAccessor } from 'u-smart-order-router-v3'
+import { IV3PoolProvider, log, metric, MetricLoggerUnit, V3PoolAccessor } from 'udonswap-smart-order-router-v3'
 import { Token } from 'udonswap-core'
 import { FeeAmount, Pool } from 'udonswap-v3'
-import { ProviderConfig } from 'u-smart-order-router-v3/build/main/providers/provider'
+import { ProviderConfig } from 'udonswap-smart-order-router-v3/build/main/providers/provider'
 import { POOL_PROVIDER_TRAFFIC_SWITCH_CONFIGURATION } from '../../util/pool-provider-traffic-switch-configuration'
 import JSBI from 'jsbi'
 

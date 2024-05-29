@@ -1,6 +1,6 @@
 import { ChainId, Currency, CurrencyAmount } from 'udonswap-core'
 import { Protocol } from 'udonswap-router'
-import { log, metric, MetricLoggerUnit, SwapRoute } from 'u-smart-order-router-v3'
+import { log, metric, MetricLoggerUnit, SwapRoute } from 'udonswap-smart-order-router-v3'
 
 export const getDistribution = (distributionPercent: number) => {
   const percents: Array<number> = new Array<number>()

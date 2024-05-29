@@ -1,5 +1,5 @@
 import { ChainId, TradeType } from 'udonswap-core'
-import { ID_TO_NETWORK_NAME } from 'u-smart-order-router-v3'
+import { ID_TO_NETWORK_NAME } from 'udonswap-smart-order-router-v3'
 import _ from 'lodash'
 import { PAIRS_TO_TRACK } from '../handlers/quote/util/pairs-to-track'
 import { Widget } from './core/model/widget'

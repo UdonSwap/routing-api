@@ -1,4 +1,4 @@
-import { SimulationStatus } from 'u-smart-order-router-v3'
+import { SimulationStatus } from 'udonswap-smart-order-router-v3'
 import Logger from 'bunyan'
 
 export const simulationStatusToString = (simulationStatus: SimulationStatus | undefined, log: Logger) => {

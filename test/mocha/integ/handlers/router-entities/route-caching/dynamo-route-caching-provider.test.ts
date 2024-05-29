@@ -8,7 +8,7 @@ import { ChainId, CurrencyAmount, TradeType } from 'udonswap-core'
 import JSBI from 'jsbi'
 import { FeeAmount, Pool } from 'udonswap-v3'
 import { WNATIVE_ON } from '../../../../../utils/tokens'
-import { CacheMode, CachedRoute, CachedRoutes, USDC_MODE, V3Route } from 'u-smart-order-router-v3'
+import { CacheMode, CachedRoute, CachedRoutes, USDC_MODE, V3Route } from 'udonswap-smart-order-router-v3'
 import { DynamoDBTableProps } from '../../../../../../bin/stacks/routing-database-stack'
 import { Abah072 } from '../../../../../utils/tokens'
 

@@ -1,6 +1,6 @@
-import { IV3PoolProvider, V3PoolAccessor } from 'u-smart-order-router-v3'
+import { IV3PoolProvider, V3PoolAccessor } from 'udonswap-smart-order-router-v3'
 import { ChainId, Token } from 'udonswap-core'
-import { ProviderConfig } from 'u-smart-order-router-v3/build/main/providers/provider'
+import { ProviderConfig } from 'udonswap-smart-order-router-v3/build/main/providers/provider'
 import { FeeAmount, Pool } from 'udonswap-v3'
 import { IDynamoCache } from '../cache-dynamo'
 import { DynamoCachingV3Pool } from './cache-dynamo-pool'

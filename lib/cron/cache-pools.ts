@@ -1,5 +1,5 @@
 import { Protocol } from 'udonswap-router'
-import { setGlobalLogger, setGlobalMetric } from 'u-smart-order-router-v3'
+import { setGlobalLogger, setGlobalMetric } from 'udonswap-smart-order-router-v3'
 import { EventBridgeEvent, ScheduledHandler } from 'aws-lambda'
 import { S3 } from 'aws-sdk'
 import { ChainId } from 'udonswap-core'
