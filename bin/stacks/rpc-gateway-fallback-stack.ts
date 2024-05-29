@@ -29,7 +29,7 @@ export class RpcGatewayFallbackStack extends cdk.NestedStack {
     const rpcHealthProviderStateDynamoDB = props.rpcProviderHealthStateDynamoDb
     rpcHealthProviderStateDynamoDB.grantReadWriteData(lambdaRole)
 
-    const region = cdk.Stack.of(this).region
+    // const region = cdk.Stack.of(this).region
 
     const providerFallbackLambda = new aws_lambda_nodejs.NodejsFunction(this, 'ProviderFallbackLambda', {
       role: lambdaRole,
@@ -43,13 +43,13 @@ export class RpcGatewayFallbackStack extends cdk.NestedStack {
         minify: true,
         sourceMap: true,
       },
-      layers: [
-        aws_lambda.LayerVersion.fromLayerVersionArn(
-          this,
-          'InsightsLayer',
-          `arn:aws:lambda:${region}:058264242741:layer:LambdaInsightsExtension:14`
-        ),
-      ],
+      // layers: [
+      //   aws_lambda.LayerVersion.fromLayerVersionArn(
+      //     this,
+      //     'InsightsLayer',
+      //     `arn:aws:lambda:${region}:058264242741:layer:LambdaInsightsExtension:14`
+      //   ),
+      // ],
       tracing: aws_lambda.Tracing.ACTIVE,
       logRetention: RetentionDays.ONE_WEEK,
 

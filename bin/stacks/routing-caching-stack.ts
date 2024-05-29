@@ -97,13 +97,13 @@ export class RoutingCachingStack extends cdk.NestedStack {
       )
     }
 
-    const region = cdk.Stack.of(this).region
+    // const region = cdk.Stack.of(this).region
 
-    const lambdaLayerVersion = aws_lambda.LayerVersion.fromLayerVersionArn(
-      this,
-      'InsightsLayerPools',
-      `arn:aws:lambda:${region}:058264242741:layer:LambdaInsightsExtension:14`
-    )
+    // const lambdaLayerVersion = aws_lambda.LayerVersion.fromLayerVersionArn(
+    //   this,
+    //   'InsightsLayerPools',
+    //   `arn:aws:lambda:${region}:058264242741:layer:LambdaInsightsExtension:14`
+    // )
 
     // Spin up a new pool cache lambda for each config in chain X protocol
     for (let i = 0; i < chainProtocols.length; i++) {
@@ -123,7 +123,7 @@ export class RoutingCachingStack extends cdk.NestedStack {
             sourceMap: true,
           },
           description: `Pool Cache Lambda for Chain with ChainId ${chainId} and Protocol ${protocol}`,
-          layers: [lambdaLayerVersion],
+          // layers: [lambdaLayerVersion],
           tracing: aws_lambda.Tracing.ACTIVE,
           environment: {
             POOL_CACHE_BUCKET: this.poolCacheBucket.bucketName,
@@ -197,13 +197,13 @@ export class RoutingCachingStack extends cdk.NestedStack {
           sourceMap: true,
         },
         description: 'IPFS Pool Cache Lambda',
-        layers: [
-          aws_lambda.LayerVersion.fromLayerVersionArn(
-            this,
-            'InsightsLayerPoolsIPFS',
-            `arn:aws:lambda:${region}:058264242741:layer:LambdaInsightsExtension:14`
-          ),
-        ],
+        // layers: [
+        //   aws_lambda.LayerVersion.fromLayerVersionArn(
+        //     this,
+        //     'InsightsLayerPoolsIPFS',
+        //     `arn:aws:lambda:${region}:058264242741:layer:LambdaInsightsExtension:14`
+        //   ),
+        // ],
         tracing: aws_lambda.Tracing.ACTIVE,
         environment: {
           PINATA_API_KEY: pinata_key!,
@@ -232,13 +232,13 @@ export class RoutingCachingStack extends cdk.NestedStack {
           sourceMap: true,
         },
         description: 'Clean IPFS Pool Cache Lambda',
-        layers: [
-          aws_lambda.LayerVersion.fromLayerVersionArn(
-            this,
-            'InsightsLayerPoolsCleanIPFS',
-            `arn:aws:lambda:${region}:058264242741:layer:LambdaInsightsExtension:14`
-          ),
-        ],
+        // layers: [
+        //   aws_lambda.LayerVersion.fromLayerVersionArn(
+        //     this,
+        //     'InsightsLayerPoolsCleanIPFS',
+        //     `arn:aws:lambda:${region}:058264242741:layer:LambdaInsightsExtension:14`
+        //   ),
+        // ],
         tracing: aws_lambda.Tracing.ACTIVE,
         environment: {
           PINATA_API_KEY: pinata_key!,
@@ -282,13 +282,13 @@ export class RoutingCachingStack extends cdk.NestedStack {
         minify: true,
         sourceMap: true,
       },
-      layers: [
-        aws_lambda.LayerVersion.fromLayerVersionArn(
-          this,
-          'InsightsLayerTokenList',
-          `arn:aws:lambda:${region}:058264242741:layer:LambdaInsightsExtension:14`
-        ),
-      ],
+      // layers: [
+      //   aws_lambda.LayerVersion.fromLayerVersionArn(
+      //     this,
+      //     'InsightsLayerTokenList',
+      //     `arn:aws:lambda:${region}:058264242741:layer:LambdaInsightsExtension:14`
+      //   ),
+      // ],
       description: 'Token List Cache Lambda',
       tracing: aws_lambda.Tracing.ACTIVE,
       environment: {
