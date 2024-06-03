@@ -279,6 +279,7 @@ export class SingleJsonRpcProvider extends StaticJsonRpcProvider {
       )
       throw error
     } finally {
+      perf.succeed = true
       this.checkLastCallPerformance(perf)
       if (this.enableDbSync) {
         if (!this.syncingDb && this.hasEnoughWaitSinceLastDbSync(1000 * this.config.DB_SYNC_INTERVAL_IN_S)) {

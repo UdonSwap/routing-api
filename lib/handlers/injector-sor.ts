@@ -85,7 +85,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   // ChainId.BLAST,
   ChainId.MODE,
 ]
-const DEFAULT_TOKEN_LIST = 'https://gateway.ipfs.io/ipns/tokens.uniswap.org'
+const DEFAULT_TOKEN_LIST = 'https://tokenlist-api.vercel.app/v3-tokens'
 
 export interface RequestInjected<Router> extends BaseRInj {
   chainId: ChainId
