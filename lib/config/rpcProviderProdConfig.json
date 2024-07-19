@@ -1,0 +1,8 @@
+[
+  {
+    "chainId": 919,
+    "useMultiProviderProb": 0.1,
+    "providerInitialWeights": [1],
+    "providerUrls": ["RPC_919"]
+  }
+]
