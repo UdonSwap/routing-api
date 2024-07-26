@@ -5,7 +5,7 @@ export function chainIdToNetworkName(networkId: ChainId): string {
     case ChainId.MODE:
       return 'mode'
     default:
-      return 'ethereum'
+      return 'mode'
   }
 }
 

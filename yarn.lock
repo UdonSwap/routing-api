@@ -8357,10 +8357,10 @@ lampros-router@1.3.0:
     lampros-core "1.3.0"
     lampros-v3 "1.3.0"
 
-lampros-sor@1.3.5:
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/lampros-sor/-/lampros-sor-1.3.5.tgz#78bed1fa1945cfec8bbbd570b757da844c523b27"
-  integrity sha512-zGllokeSBWcCzit52czVDSpZewf5h1BMo0wgGROtqDFcpMaL28W4Lp/i1kP6iCy0bZfNKvqox0YYd88X/CLEEA==
+lampros-sor@1.3.6:
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/lampros-sor/-/lampros-sor-1.3.6.tgz#114b64341345091eb5ad496bcc755b01674a3ecf"
+  integrity sha512-iENejNp94sUHVzNrHnqh6CPurCloSQ89C0GEeD5uoTrxrsONqkaBdIkHJadkJbGRNszmiuRkafldbz29MJig5w==
   dependencies:
     "@eth-optimism/sdk" "^3.2.2"
     "@types/brotli" "^1.3.4"
