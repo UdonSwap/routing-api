@@ -20,7 +20,6 @@ import {
   NodeJSCache,
   OnChainGasPriceProvider,
   OnChainQuoteProvider,
-  // QUOTER_V2_ADDRESSES,
   setGlobalLogger,
   Simulator,
   StaticV3SubgraphProvider,
@@ -329,7 +328,6 @@ export abstract class InjectorSOR<Router, QueryParams> extends Injector<
           }
 
           // const v2Supported = [
-            
           // ]
 
           return {
