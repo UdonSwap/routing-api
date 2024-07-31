@@ -386,16 +386,17 @@ export class QuoteHandler extends APIGLambdaHandler<
         )
 
         swapRoute = await router.route(amount, currencyOut, TradeType.EXACT_INPUT, swapParams, routingConfig)
-        console.log("Swap Params:", swapParams);
-        console.log("Routing Config:", routingConfig);
-        console.log("Request Source:", params.requestQueryParams.source);
-        console.log("Currency In:", currencyIn);
-        console.log("Currency Out:", currencyOut);
+        console.log('Router Route Call:')
+        console.log('Amount:', amount.toString())
+        console.log('Currency Out:', currencyOut)
+        console.log('Trade Type:', TradeType.EXACT_INPUT)
+        console.log('Swap Params:', swapParams)
+        console.log('Routing Config:', routingConfig)
         if (swapRoute) {
-          console.log("Swap Route Found:", swapRoute);
-          console.log("Swap Route Quote:", swapRoute.quote.toExact());
+          console.log('Swap Route Found:', swapRoute)
+          console.log('Swap Route Quote:', swapRoute.quote.toExact())
         } else {
-          console.log("No Swap Route Found");
+          console.log('No Swap Route Found')
         }
         break
       case 'exactOut':
@@ -520,7 +521,7 @@ export class QuoteHandler extends APIGLambdaHandler<
             amountIn: edgeAmountIn,
             amountOut: edgeAmountOut,
           })
-        } 
+        }
         this.deriveBuyFeeBps, this.deriveSellFeeBps
         // else {
         //   const reserve0 = nextPool.reserve0

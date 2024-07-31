@@ -175,7 +175,7 @@ export function computePortionAmount(currencyOut: CurrencyAmount<Currency>, port
   if (!portionBips) {
     return undefined
   }
-
+  console.log("This is the protionBips for calculate the fee", portionBips)
   return currencyOut.multiply(parsePortionPercent(portionBips)).quotient.toString()
 }
 
