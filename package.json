@@ -87,7 +87,7 @@
     "lampros-router": "1.3.3",
     "lampros-core": "1.3.0",
     "@types/semver": "^7.5.8",
-    "lampros-sor": "1.3.10",
+    "lampros-sor": "1.3.11",
     "udonswap-token-lists": "1.0.0",
     "lampros-universal": "1.3.3",
     "@uniswap/v3-periphery": "^1.4.4",
