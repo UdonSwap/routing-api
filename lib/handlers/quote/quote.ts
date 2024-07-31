@@ -386,6 +386,17 @@ export class QuoteHandler extends APIGLambdaHandler<
         )
 
         swapRoute = await router.route(amount, currencyOut, TradeType.EXACT_INPUT, swapParams, routingConfig)
+        console.log("Swap Params:", swapParams);
+        console.log("Routing Config:", routingConfig);
+        console.log("Request Source:", params.requestQueryParams.source);
+        console.log("Currency In:", currencyIn);
+        console.log("Currency Out:", currencyOut);
+        if (swapRoute) {
+          console.log("Swap Route Found:", swapRoute);
+          console.log("Swap Route Quote:", swapRoute.quote.toExact());
+        } else {
+          console.log("No Swap Route Found");
+        }
         break
       case 'exactOut':
         amount = CurrencyAmount.fromRawAmount(currencyOut, JSBI.BigInt(amountRaw))
