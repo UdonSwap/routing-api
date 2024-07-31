@@ -386,11 +386,16 @@ export class QuoteHandler extends APIGLambdaHandler<
         )
 
         swapRoute = await router.route(amount, currencyOut, TradeType.EXACT_INPUT, swapParams, routingConfig)
+        
         console.log('Router Route Call:')
         console.log('Amount:', amount.toString())
         console.log('Currency Out:', currencyOut)
         console.log('Trade Type:', TradeType.EXACT_INPUT)
-        console.log('Swap Params:', swapParams)
+        if(swapParams){
+          console.log("It is using the SwapOption")
+        }else{
+          console.log('Swap Params is undefined')
+        }
         console.log('Routing Config:', routingConfig)
         if (swapRoute) {
           console.log('Swap Route Found:', swapRoute)
