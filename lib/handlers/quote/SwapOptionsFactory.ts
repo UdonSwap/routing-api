@@ -65,6 +65,25 @@ export class SwapOptionsFactory {
   }: SwapOptionsInput): SwapOptions | undefined {
     console.log("enableUniversalRouter",enableUniversalRouter)
     if (enableUniversalRouter) {
+      console.log("Swap Option Checking", SwapOptionsFactory.createUniversalRouterOptions({
+        chainId,
+        currencyIn,
+        currencyOut,
+        tradeType,
+        slippageTolerance,
+        portionBips,
+        portionRecipient,
+        portionAmount,
+        amountRaw,
+        deadline,
+        recipient,
+        permitSignature,
+        permitNonce,
+        permitExpiration,
+        permitAmount,
+        permitSigDeadline,
+        simulateFromAddress,
+      }) )
       return SwapOptionsFactory.createUniversalRouterOptions({
         chainId,
         currencyIn,
