@@ -63,7 +63,6 @@ export class SwapOptionsFactory {
     permitSigDeadline,
     simulateFromAddress,
   }: SwapOptionsInput): SwapOptions | undefined {
-    enableUniversalRouter = true;  
     if (enableUniversalRouter) {
       return SwapOptionsFactory.createUniversalRouterOptions({
         chainId,
