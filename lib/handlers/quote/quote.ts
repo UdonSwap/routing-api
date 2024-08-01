@@ -232,6 +232,8 @@ export class QuoteHandler extends APIGLambdaHandler<
       }
     }
 
+    console.log("Slippage Tolerance 1 : ", slippageTolerance);
+
     const requestSourceHeader = params.event.headers && params.event.headers['x-request-source']
     const appVersion = params.event.headers && params.event.headers['x-app-version']
 
@@ -355,6 +357,7 @@ export class QuoteHandler extends APIGLambdaHandler<
       simulateFromAddress,
     })
 
+    console.log("Slippage Tolerance 2 : ", swapParams?.slippageTolerance);
     if (swapParams?.simulate?.fromAddress) {
       metric.putMetric('Simulation Requested', 1, MetricLoggerUnit.Count)
     }
