@@ -1,0 +1,45 @@
+{
+    "blockNumber": "17320867",
+    "amount": "100",
+    "amountDecimals": "0.0000000000000001",
+    "quote": "1",
+    "quoteDecimals": "0.000000000000000001",
+    "quoteGasAdjusted": "-32750033011999",
+    "quoteGasAdjustedDecimals": "-0.000032750033011999",
+    "gasUseEstimateQuote": "32750033012000",
+    "gasUseEstimateQuoteDecimals": "0.000032750033012",
+    "gasUseEstimate": "131000",
+    "gasUseEstimateUSD": "0.123280745696250425",
+    "simulationStatus": "UNATTEMPTED",
+    "simulationError": false,
+    "gasPriceWei": "250000252",
+    "route": [
+        [
+            {
+                "type": "v3-pool",
+                "address": "0x5ECA0560B047A950d0b12a3F76Eaaa15AAF453bF",
+                "tokenIn": {
+                    "chainId": 919,
+                    "decimals": "18",
+                    "address": "0xF7ca2401709BC01Eba07d46c8d59e865C983e1AC",
+                    "symbol": "LAMP"
+                },
+                "tokenOut": {
+                    "chainId": 919,
+                    "decimals": "18",
+                    "address": "0x4200000000000000000000000000000000000006",
+                    "symbol": "WETH"
+                },
+                "fee": "3000",
+                "liquidity": "39536029054379348646",
+                "sqrtRatioX96": "769430799095317971091565318298",
+                "tickCurrent": "45468",
+                "amountIn": "100",
+                "amountOut": "1"
+            }
+        ]
+    ],
+    "routeString": "[V3] 100.00% = LAMP -- 0.3% [0x5ECA0560B047A950d0b12a3F76Eaaa15AAF453bF] --> WETH",
+    "quoteId": "b3ae6",
+    "hitsCachedRoutes": false
+}
