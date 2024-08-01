@@ -6,6 +6,7 @@ import { computePortionAmount, parseDeadline, parseSlippageTolerance, populateFe
 import { PermitSingle } from 'udonswap-permit2'
 import { UNIVERSAL_ROUTER_ADDRESS } from 'lampros-universal'
 import { utils } from 'ethers'
+// import { log } from 'co/nsole'
 
 export type SwapOptionsUniversalRouterInput = {
   chainId: ChainId
@@ -63,27 +64,7 @@ export class SwapOptionsFactory {
     permitSigDeadline,
     simulateFromAddress,
   }: SwapOptionsInput): SwapOptions | undefined {
-    console.log("enableUniversalRouter",enableUniversalRouter)
     if (enableUniversalRouter) {
-      console.log("Swap Option Checking", SwapOptionsFactory.createUniversalRouterOptions({
-        chainId,
-        currencyIn,
-        currencyOut,
-        tradeType,
-        slippageTolerance,
-        portionBips,
-        portionRecipient,
-        portionAmount,
-        amountRaw,
-        deadline,
-        recipient,
-        permitSignature,
-        permitNonce,
-        permitExpiration,
-        permitAmount,
-        permitSigDeadline,
-        simulateFromAddress,
-      }) )
       return SwapOptionsFactory.createUniversalRouterOptions({
         chainId,
         currencyIn,
@@ -137,6 +118,9 @@ export class SwapOptionsFactory {
     permitSigDeadline,
     simulateFromAddress,
   }: SwapOptionsUniversalRouterInput): SwapOptionsUniversalRouter | undefined {
+    console.log("Entered into createUniversalRouterOptions...");
+    console.log("slippage Tolerance : ", slippageTolerance);
+        
     if (!slippageTolerance) {
       return undefined
     }
@@ -157,6 +141,9 @@ export class SwapOptionsFactory {
       ...allFeeOptions,
     }
 
+    console.log("Swap Params 1 : ", swapParams);
+    
+
     if (permitSignature && permitNonce && permitExpiration && permitAmount && permitSigDeadline) {
       const permit: PermitSingle = {
         details: {
@@ -169,15 +156,21 @@ export class SwapOptionsFactory {
         sigDeadline: permitSigDeadline,
       }
 
+      console.log("Swap Params 2 : ", swapParams);
+
       swapParams.inputTokenPermit = {
         ...permit,
         signature: permitSignature,
       }
     }
 
+    console.log("Swap Params 4 : ", swapParams);
+
     if (simulateFromAddress) {
       swapParams.simulate = { fromAddress: simulateFromAddress }
     }
+
+    console.log("Swap Params 5 : ", swapParams);
     return swapParams
   }
 
