@@ -3,7 +3,7 @@ import { SwapOptions, SwapOptionsSwapRouter02, SwapOptionsUniversalRouter, SwapT
 import JSBI from 'jsbi'
 import { TradeTypeParam } from './schema/quote-schema'
 import { computePortionAmount, parseDeadline, parseSlippageTolerance, populateFeeOptions } from '../shared'
-import { PermitSingle } from '@uniswap/permit2-sdk'
+import { PermitSingle } from 'udonswap-permit2'
 import { UNIVERSAL_ROUTER_ADDRESS } from 'lampros-universal'
 import { utils } from 'ethers'
 
