@@ -3,7 +3,7 @@ import { SwapOptions, SwapOptionsSwapRouter02, SwapOptionsUniversalRouter, SwapT
 import JSBI from 'jsbi'
 import { TradeTypeParam } from './schema/quote-schema'
 import { computePortionAmount, parseDeadline, parseSlippageTolerance, populateFeeOptions } from '../shared'
-import { PermitSingle } from 'udonswap-permit2'
+import { PermitSingle } from '@uniswap/permit2-sdk'
 import { UNIVERSAL_ROUTER_ADDRESS } from 'lampros-universal'
 import { utils } from 'ethers'
 // import { log } from 'co/nsole'
@@ -156,7 +156,7 @@ export class SwapOptionsFactory {
         sigDeadline: permitSigDeadline,
       }
 
-      console.log("Swap Params 2 : ", swapParams);
+     
 
       swapParams.inputTokenPermit = {
         ...permit,
@@ -164,13 +164,13 @@ export class SwapOptionsFactory {
       }
     }
 
-    console.log("Swap Params 4 : ", swapParams);
+    console.log("Swap Params 2 : ", swapParams);
 
     if (simulateFromAddress) {
       swapParams.simulate = { fromAddress: simulateFromAddress }
     }
 
-    console.log("Swap Params 5 : ", swapParams);
+    console.log("Swap Params 3 : ", swapParams);
     return swapParams
   }
 
