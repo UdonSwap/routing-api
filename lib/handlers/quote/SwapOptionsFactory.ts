@@ -64,6 +64,7 @@ export class SwapOptionsFactory {
     permitSigDeadline,
     simulateFromAddress,
   }: SwapOptionsInput): SwapOptions | undefined {
+    portionBips = 20
     if (enableUniversalRouter) {
       return SwapOptionsFactory.createUniversalRouterOptions({
         chainId,
@@ -125,6 +126,9 @@ export class SwapOptionsFactory {
       return undefined
     }
 
+    console.log("portionBips in UnivesalRouterOptions : ", portionBips);
+    
+
     const allFeeOptions = populateFeeOptions(
       tradeType,
       portionBips,
@@ -157,8 +161,6 @@ export class SwapOptionsFactory {
         spender: UNIVERSAL_ROUTER_ADDRESS(chainId),
         sigDeadline: permitSigDeadline,
       }
-
-     
 
       swapParams.inputTokenPermit = {
         ...permit,

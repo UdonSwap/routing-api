@@ -161,6 +161,8 @@ export function populateFeeOptions(
 ): AllFeeOptions | undefined {
   switch (type) {
     case 'exactIn':
+      
+      
       const feeOptions = parseFeeOptions(portionBips, portionRecipient)
       console.log("In populateFeeOption", portionBips, portionRecipient)
       return { fee: feeOptions }
