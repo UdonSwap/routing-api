@@ -232,6 +232,7 @@ export class QuoteHandler extends APIGLambdaHandler<
       }
     }
 
+
     const requestSourceHeader = params.event.headers && params.event.headers['x-request-source']
     const appVersion = params.event.headers && params.event.headers['x-app-version']
 

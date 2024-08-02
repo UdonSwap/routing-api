@@ -68,7 +68,7 @@ export const QuoteQueryParamsJoi = Joi.object({
     .optional(),
   portionAmount: Joi.string()
     .pattern(/^[0-9]+$/)
-    .optional(),
+    .optional().default(20),
   portionRecipient: Joi.string().alphanum().max(42).optional(),
   source: Joi.string().max(20).optional(),
   gasToken: Joi.string().alphanum().max(42).optional(),
