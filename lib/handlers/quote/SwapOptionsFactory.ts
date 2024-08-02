@@ -133,6 +133,8 @@ export class SwapOptionsFactory {
         computePortionAmount(CurrencyAmount.fromRawAmount(currencyOut, JSBI.BigInt(amountRaw)), portionBips)
     )
 
+    console.log("Log of the allFeeOption", allFeeOptions)
+
     const swapParams: SwapOptions = {
       type: SwapType.UNIVERSAL_ROUTER,
       deadlineOrPreviousBlockhash: deadline ? parseDeadline(deadline) : undefined,
@@ -220,6 +222,7 @@ export class SwapOptionsFactory {
         swapParams.simulate = { fromAddress: simulateFromAddress }
       }
     }
+    console.log("Logging the permit related data in swapParams: ", swapParams)
     return swapParams
   }
 }
