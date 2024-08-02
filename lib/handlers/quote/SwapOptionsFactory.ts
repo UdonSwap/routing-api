@@ -222,7 +222,6 @@ export class SwapOptionsFactory {
         swapParams.simulate = { fromAddress: simulateFromAddress }
       }
     }
-    console.log("Logging the permit related data in swapParams: ", swapParams)
     return swapParams
   }
 }
