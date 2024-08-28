@@ -170,19 +170,25 @@ export function populateFeeOptions(
 
 export function computePortionAmount(currencyOut: CurrencyAmount<Currency>, portionBips?: number): string | undefined {
   console.log('computePortionAmount called with:', {
-    currencyOut: currencyOut.toExact(),
+    currencyOut: currencyOut,
     portionBips: portionBips,
   })
 
   if (!portionBips) {
-    console.log('portionBips is undefined, returning undefined')
+    console.log('portionBips is undefined or 0, returning undefined')
     return undefined
   }
 
+  // const newCurrency = currencyOut;
+
   console.log('Calculating portion amount...')
   const portionPercent = parsePortionPercent(portionBips)
+  console.log('Portion percent without restriction of point:', portionPercent)
   console.log('Portion percent:', portionPercent.toFixed(2))
 
+  console.log('Currency outttttttttttttttttt: ', currencyOut)
+  console.log('Currency out mul: ', currencyOut.multiply(portionPercent))
+  console.log('Currency out quo: ', currencyOut.multiply(portionPercent).quotient)
   const result = currencyOut.multiply(portionPercent).quotient.toString()
   console.log('Calculated portion amount:', result)
 
