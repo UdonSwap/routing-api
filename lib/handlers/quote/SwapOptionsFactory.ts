@@ -126,6 +126,7 @@ export class SwapOptionsFactory {
     }
 
     console.log("portionBips in UnivesalRouterOptions : ", portionBips);
+    console.log("compute portion amount params: ", CurrencyAmount.fromRawAmount(currencyOut, JSBI.BigInt(amountRaw)))
     
 
     const allFeeOptions = populateFeeOptions(

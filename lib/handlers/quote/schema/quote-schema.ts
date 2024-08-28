@@ -65,7 +65,7 @@ export const QuoteQueryParamsJoi = Joi.object({
   portionBips: Joi.string()
     .pattern(/^[0-9]+$/)
     .max(5) // portionBips is a string type with the expectation of being parsable to integer between 0 and 10000
-    .optional().default(20),
+    .optional(),
   portionAmount: Joi.string()
     .pattern(/^[0-9]+$/)
     .optional(),
