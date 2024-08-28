@@ -64,6 +64,19 @@ export class SwapOptionsFactory {
     permitSigDeadline,
     simulateFromAddress,
   }: SwapOptionsInput): SwapOptions | undefined {
+    console.log('SwapOptionsFactory.assemble called with:', {
+      chainId,
+      currencyIn: currencyIn.symbol,
+      currencyOut: currencyOut.symbol,
+      tradeType,
+      amountRaw,
+      slippageTolerance,
+      enableUniversalRouter,
+      portionBips,
+      portionRecipient,
+      portionAmount,
+    });
+    
     if (enableUniversalRouter) {
       return SwapOptionsFactory.createUniversalRouterOptions({
         chainId,
@@ -125,16 +138,18 @@ export class SwapOptionsFactory {
       return undefined
     }
 
-    console.log("portionBips in UnivesalRouterOptions : ", portionBips);
-    console.log("compute portion amount params: ", CurrencyAmount.fromRawAmount(currencyOut, JSBI.BigInt(amountRaw)))
-    
+    console.log("portionBips in UniversalRouterOptions : ", portionBips);
+    const currencyAmount = CurrencyAmount.fromRawAmount(currencyOut, JSBI.BigInt(amountRaw));
+    console.log("compute portion amount params: ", currencyAmount.toExact());
+
+    const computedPortionAmount = computePortionAmount(currencyAmount, portionBips);
+    console.log("Computed portion amount: ", computedPortionAmount);
 
     const allFeeOptions = populateFeeOptions(
       tradeType,
       portionBips,
       portionRecipient,
-      portionAmount ??
-        computePortionAmount(CurrencyAmount.fromRawAmount(currencyOut, JSBI.BigInt(amountRaw)), portionBips)
+      portionAmount ?? computedPortionAmount
     )
 
     console.log("Log of the allFeeOption", allFeeOptions)

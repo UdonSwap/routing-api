@@ -389,7 +389,8 @@ export class QuoteHandler extends APIGLambdaHandler<
         swapRoute = await router.route(amount, currencyOut, TradeType.EXACT_INPUT, swapParams, routingConfig)
 
         console.log('Router Route Call:')
-        console.log('Amount:', amount.toString())
+        console.log('Amount:', amount)
+        console.log('Amount in string:', amount.toString())
         console.log('Currency Out:', currencyOut)
         console.log('Trade Type:', TradeType.EXACT_INPUT)
         console.log('Assembling Swap Options with parameters:')

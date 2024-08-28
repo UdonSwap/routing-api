@@ -1,9 +1,5 @@
 import { ChainId, Currency, CurrencyAmount, Percent } from 'lampros-core'
-import {
-  AlphaRouterConfig,
-  CacheMode,
-  ProtocolPoolSelection,
-} from 'lampros-sor'
+import { AlphaRouterConfig, CacheMode, ProtocolPoolSelection } from 'lampros-sor'
 import { FeeOptions } from 'lampros-v3'
 import { FlatFeeOptions } from 'lampros-universal'
 
@@ -161,10 +157,8 @@ export function populateFeeOptions(
 ): AllFeeOptions | undefined {
   switch (type) {
     case 'exactIn':
-      
-      
       const feeOptions = parseFeeOptions(portionBips, portionRecipient)
-      console.log("In populateFeeOption", portionBips, portionRecipient)
+      console.log('In populateFeeOption', portionBips, portionRecipient)
       return { fee: feeOptions }
     case 'exactOut':
       const flatFeeOptions = parseFlatFeeOptions(portionAmount, portionRecipient)
@@ -175,13 +169,24 @@ export function populateFeeOptions(
 }
 
 export function computePortionAmount(currencyOut: CurrencyAmount<Currency>, portionBips?: number): string | undefined {
+  console.log('computePortionAmount called with:', {
+    currencyOut: currencyOut.toExact(),
+    portionBips: portionBips,
+  })
+
   if (!portionBips) {
+    console.log('portionBips is undefined, returning undefined')
     return undefined
   }
-  console.log("This is the protionBips for calculate the fee", portionBips)
-  console.log("Currency out: ", currencyOut)
-  console.log("Currency out response: ", currencyOut.multiply(parsePortionPercent(portionBips)).quotient.toString())
-  return currencyOut.multiply(parsePortionPercent(portionBips)).quotient.toString()
+
+  console.log('Calculating portion amount...')
+  const portionPercent = parsePortionPercent(portionBips)
+  console.log('Portion percent:', portionPercent.toFixed(2))
+
+  const result = currencyOut.multiply(portionPercent).quotient.toString()
+  console.log('Calculated portion amount:', result)
+
+  return result
 }
 
 export const DEFAULT_DEADLINE = 600 // 10 minutes
