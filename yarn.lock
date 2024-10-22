@@ -8327,10 +8327,10 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-lampros-core@1.4.1, lampros-core@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/lampros-core/-/lampros-core-1.4.1.tgz#559414de105aa5027fe48e30246c7be38837dab2"
-  integrity sha512-r2aOf1TeS91HjcE+nKCLqcFiVPKv6u6fJ3VnlT2fPc6qANoqX43JX17RBigNra7dGnbGXZbDEKS4BLnMd6yoxg==
+lampros-core@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/lampros-core/-/lampros-core-1.4.2.tgz#ca1aea1c66f047ca5e46b352e7aed1411cf63d73"
+  integrity sha512-xVQUKzTtjk4HDzunzcKmB5HvWIxTdPI1qh4TOE4Ux+veCloxlsSyZNCl0GEuZ5LPDhWD3gBme1wevUjF4MuhlA==
   dependencies:
     "@ethersproject/address" "^5.0.2"
     big.js "^5.2.2"
@@ -8339,20 +8339,20 @@ lampros-core@1.4.1, lampros-core@^1.4.1:
     tiny-invariant "^1.1.0"
     toformat "^2.0.0"
 
-lampros-router@1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/lampros-router/-/lampros-router-1.4.1.tgz#a0e723a17f35a0164e2f4868f132b48c3f126f13"
-  integrity sha512-ZR3Gy4ZLfmoJYiajUk4hixoCpqfwwsn6vmyBciCPRyii1nAIMaUSeIZguf9zn2+818+hKe1RCFiJNJfy5dibdA==
+lampros-router@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/lampros-router/-/lampros-router-1.4.2.tgz#349fd02be57d9e01748b745b59ef40cbfb00f6ea"
+  integrity sha512-hDtlIsWXTzEQ60PkLlSx7ln3u3HsJeJckN6rRs5P2n1oyVeciTwzFsGBAwNA+WzSvvCEyFdGmx7urC8zVu6+yw==
   dependencies:
     "@ethersproject/abi" "^5.5.0"
     "@uniswap/swap-router-contracts" "^1.1.0"
-    lampros-core "^1.4.1"
-    lampros-v3 "^1.4.1"
+    lampros-core "1.4.2"
+    lampros-v3 "1.4.2"
 
-lampros-sor@1.3.23:
-  version "1.3.23"
-  resolved "https://registry.yarnpkg.com/lampros-sor/-/lampros-sor-1.3.23.tgz#1ae44b165f96d5476d8a852a8bd42e57a656c4d5"
-  integrity sha512-NDFt1mBw93Dpf3GDY8pp5n7yORy1e1lVaFEvPDk95yLQwRLbCBSibg+Hv4uov8Zuyzr6/vnhlVmFZ2JYFFkGdw==
+lampros-sor@1.3.24:
+  version "1.3.24"
+  resolved "https://registry.yarnpkg.com/lampros-sor/-/lampros-sor-1.3.24.tgz#b48f4b0917c7c31fec4862237005bca9ae352914"
+  integrity sha512-I3XFulhkKtwS14xxFoBdOc1rpTXHDchBcDFq9q1P0dGE6DaxoDWjOPisrPO3GEkTlXm2bTJL3fOfvw+LIbbEVw==
   dependencies:
     "@eth-optimism/sdk" "^3.2.2"
     "@types/brotli" "^1.3.4"
@@ -8367,10 +8367,10 @@ lampros-sor@1.3.23:
     ethers "^5.7.2"
     graphql "^15.5.0"
     graphql-request "^3.4.0"
-    lampros-core "1.4.1"
-    lampros-router "1.4.1"
-    lampros-universal "1.4.5"
-    lampros-v3 "1.4.1"
+    lampros-core "1.4.2"
+    lampros-router "1.4.2"
+    lampros-universal "1.4.6"
+    lampros-v3 "1.4.2"
     lodash "^4.17.21"
     mnemonist "^0.38.3"
     node-cache "^5.1.2"
@@ -8379,30 +8379,30 @@ lampros-sor@1.3.23:
     udonswap-permit2 "^1.2.2"
     udonswap-token-lists "^1.0.0-beta.31"
 
-lampros-universal@1.4.5:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/lampros-universal/-/lampros-universal-1.4.5.tgz#868555b9722f00b9f79df198806f346a6017e72b"
-  integrity sha512-RX7l0iPfKqFViAvOb0SXOLg6faN+/4epio9x6GuRNcBUe5X8ARp5GEttqOgC5I/c+1uTd7SE5fjjjt9gLEOoFA==
+lampros-universal@1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/lampros-universal/-/lampros-universal-1.4.6.tgz#c35cd281931711826f29011b816ea9c5fc8d64f2"
+  integrity sha512-trZ9fm4scOrCs7oS2iY/AJGHQdsAQHf3NnyfNb/FTQUToKh29vcnduyi9s6u4f/Z8qz+fmDiZ9Bknr6KDeD+cg==
   dependencies:
     "@uniswap/universal-router" "1.6.0"
     bignumber.js "^9.0.2"
     ethers "^5.3.1"
-    lampros-core "1.4.1"
-    lampros-router "1.4.1"
-    lampros-v3 "1.4.1"
+    lampros-core "1.4.2"
+    lampros-router "1.4.2"
+    lampros-v3 "1.4.2"
     udonswap-permit2 "^1.2.2"
 
-lampros-v3@1.4.1, lampros-v3@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/lampros-v3/-/lampros-v3-1.4.1.tgz#02a9aa915a3aa5b8b6827c54164f12a8b1247830"
-  integrity sha512-o9Mw57qmTrji7aB2T750ReJszfenPrFrD08tKUMbqk0/uWcYm79A/FM4H34oJsxvy0ZW4Q/z5rIx06Z4omqfKw==
+lampros-v3@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/lampros-v3/-/lampros-v3-1.4.2.tgz#5ff2f77c504febd13da9d34c9729e9abcc09f240"
+  integrity sha512-tDlrEFRokZkEv6MHMZWlhJjTKor2yz3d+a0qONEUupOwMAgWzTqN6Iut4RyPLC8LIEOECY2RffwBcxwpEw98jw==
   dependencies:
     "@ethersproject/abi" "^5.0.12"
     "@ethersproject/solidity" "^5.0.9"
     "@uniswap/swap-router-contracts" "^1.2.1"
     "@uniswap/v3-periphery" "^1.1.1"
     "@uniswap/v3-staker" "1.0.0"
-    lampros-core "^1.4.1"
+    lampros-core "1.4.2"
     tiny-invariant "^1.1.0"
     tiny-warning "^1.0.3"
 
