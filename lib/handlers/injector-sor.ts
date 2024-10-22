@@ -50,9 +50,11 @@ import { GlobalRpcProviders } from '../rpc/GlobalRpcProviders'
 import { StaticJsonRpcProvider } from '@ethersproject/providers'
 import { TrafficSwitchOnChainQuoteProvider } from './quote/provider-migration/v3/traffic-switch-on-chain-quote-provider'
 import {
-  BATCH_PARAMS,
+  // BATCH_PARAMS,
   BLOCK_NUMBER_CONFIGS,
   GAS_ERROR_FAILURE_OVERRIDES,
+  NON_OPTIMISTIC_CACHED_ROUTES_BATCH_PARAMS,
+  OPTIMISTIC_CACHED_ROUTES_BATCH_PARAMS,
   RETRY_OPTIONS,
   SUCCESS_RATE_FAILURE_OVERRIDES,
 } from '../util/onChainQuoteProviderConfigs'
@@ -265,7 +267,13 @@ export abstract class InjectorSOR<Router, QueryParams> extends Injector<
                 provider,
                 multicall2Provider,
                 RETRY_OPTIONS[chainId],
-                BATCH_PARAMS[chainId],
+                (optimisticCachedRoutes) => {
+                  const protocol = Protocol.V3
+                  return optimisticCachedRoutes
+                    ? OPTIMISTIC_CACHED_ROUTES_BATCH_PARAMS[protocol][chainId]
+                    : NON_OPTIMISTIC_CACHED_ROUTES_BATCH_PARAMS[protocol][chainId]
+                },
+                // BATCH_PARAMS[chainId],
                 GAS_ERROR_FAILURE_OVERRIDES[chainId],
                 SUCCESS_RATE_FAILURE_OVERRIDES[chainId],
                 BLOCK_NUMBER_CONFIGS[chainId],
@@ -275,7 +283,13 @@ export abstract class InjectorSOR<Router, QueryParams> extends Injector<
                 provider,
                 multicall2Provider,
                 RETRY_OPTIONS[chainId],
-                BATCH_PARAMS[chainId],
+                (optimisticCachedRoutes) => {
+                  const protocol = Protocol.V3
+                  return optimisticCachedRoutes
+                    ? OPTIMISTIC_CACHED_ROUTES_BATCH_PARAMS[protocol][chainId]
+                    : NON_OPTIMISTIC_CACHED_ROUTES_BATCH_PARAMS[protocol][chainId]
+                },
+                // BATCH_PARAMS[chainId],
                 GAS_ERROR_FAILURE_OVERRIDES[chainId],
                 SUCCESS_RATE_FAILURE_OVERRIDES[chainId],
                 BLOCK_NUMBER_CONFIGS[chainId],
@@ -295,6 +309,7 @@ export abstract class InjectorSOR<Router, QueryParams> extends Injector<
             process.env.TENDERLY_USER!,
             process.env.TENDERLY_PROJECT!,
             process.env.TENDERLY_ACCESS_KEY!,
+            process.env.TENDERLY_NODE_API_KEY!,
             v3PoolProvider,
             provider,
             portionProvider,

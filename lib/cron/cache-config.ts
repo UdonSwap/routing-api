@@ -11,12 +11,15 @@ const v3SubgraphUrlOverride = (chainId: ChainId) => {
   }
 }
 
+export const v3TrackedEthThreshold = 0.01 // Pools need at least 0.01 of trackedEth to be selected
+const v3UntrackedUsdThreshold = 25000 // Pools need at least 25K USD (untracked) to be selected (for metrics only)
+
 export const chainProtocols = [
   // V3.
   {
     protocol: Protocol.V3,
     chainId: ChainId.MODE,
     timeout: 90000,
-    provider: new V3SubgraphProvider(ChainId.MODE, 3, 90000, true, v3SubgraphUrlOverride(ChainId.MODE)),
+    provider: new V3SubgraphProvider(ChainId.MODE, 3, 90000, true, v3TrackedEthThreshold, v3UntrackedUsdThreshold, v3SubgraphUrlOverride(ChainId.MODE)),
   },
 ]
